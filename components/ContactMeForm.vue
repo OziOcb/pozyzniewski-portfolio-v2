@@ -129,83 +129,82 @@
 </template>
 
 <script>
-import { required, minLength, email, numeric } from 'vuelidate/lib/validators'
+// import { required, minLength, email, numeric } from 'vuelidate/lib/validators'
 
 export default {
-  data() {
-    return {
-      uiState: 'submit not clicked',
-      errors: false,
-      empty: true,
-      formResponses: {
-        name: null,
-        email: null,
-        phone: null,
-        webOrCompanyName: null,
-        message: null,
-      },
-    }
-  },
-  validations: {
-    formResponses: {
-      name: {
-        required,
-        minLength: minLength(2),
-      },
-      email: {
-        required,
-        email,
-      },
-      phone: {
-        numeric,
-        minLength: minLength(8),
-      },
-      webOrCompanyName: {
-        minLength: minLength(2),
-      },
-      message: {
-        required,
-        minLength: minLength(12),
-      },
-    },
-  },
-  methods: {
-    encode(data) {
-      return Object.keys(data)
-        .map(
-          (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-        )
-        .join('&')
-    },
-    handleSubmit(e) {
-      this.empty = !this.$v.formResponses.$anyDirty
-      this.errors = this.$v.formResponses.$anyError
-      this.uiState = 'submit clicked'
-      if (this.errors === false && this.empty === false) {
-        this.uiState = 'pending' // Disable the button while the form is submiting
-
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: this.encode({
-            'form-name': e.target.getAttribute('name'),
-            ...this.formResponses,
-          }),
-        })
-          .then(() => {
-            this.uiState = 'form submitted'
-            this.formResponses = {
-              name: null,
-              email: null,
-              phone: null,
-              webOrCompanyName: null,
-              message: null,
-            }
-          })
-          .catch((error) => alert(error))
-      }
-    },
-  },
+  //   data() {
+  //     return {
+  //       uiState: 'submit not clicked',
+  //       errors: false,
+  //       empty: true,
+  //       formResponses: {
+  //         name: null,
+  //         email: null,
+  //         phone: null,
+  //         webOrCompanyName: null,
+  //         message: null,
+  //       },
+  //     }
+  //   },
+  //   validations: {
+  //     formResponses: {
+  //       name: {
+  //         required,
+  //         minLength: minLength(2),
+  //       },
+  //       email: {
+  //         required,
+  //         email,
+  //       },
+  //       phone: {
+  //         numeric,
+  //         minLength: minLength(8),
+  //       },
+  //       webOrCompanyName: {
+  //         minLength: minLength(2),
+  //       },
+  //       message: {
+  //         required,
+  //         minLength: minLength(12),
+  //       },
+  //     },
+  //   },
+  //   methods: {
+  //     encode(data) {
+  //       return Object.keys(data)
+  //         .map(
+  //           (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+  //         )
+  //         .join('&')
+  //     },
+  //     handleSubmit(e) {
+  //       this.empty = !this.$v.formResponses.$anyDirty
+  //       this.errors = this.$v.formResponses.$anyError
+  //       this.uiState = 'submit clicked'
+  //       if (this.errors === false && this.empty === false) {
+  //         this.uiState = 'pending' // Disable the button while the form is submiting
+  //         fetch('/', {
+  //           method: 'POST',
+  //           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //           body: this.encode({
+  //             'form-name': e.target.getAttribute('name'),
+  //             ...this.formResponses,
+  //           }),
+  //         })
+  //           .then(() => {
+  //             this.uiState = 'form submitted'
+  //             this.formResponses = {
+  //               name: null,
+  //               email: null,
+  //               phone: null,
+  //               webOrCompanyName: null,
+  //               message: null,
+  //             }
+  //           })
+  //           .catch((error) => alert(error))
+  //       }
+  //     },
+  //   },
 }
 </script>
 

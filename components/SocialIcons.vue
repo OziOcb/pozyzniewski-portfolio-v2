@@ -9,40 +9,33 @@
       rel="noopener noreferrer"
     >
       <span class="sr-only">{{ website.svg }} in {{ parentComponent }}</span>
-      <component :is="website.svg"></component>
+      <Icon :name="website.svg" size="25" />
     </a>
   </div>
 </template>
 
 <script>
-import SvgLinkedIn from "~/assets/img/svg/linkedIn.svg"
-import SvgGitHub from "~/assets/img/svg/gitHub.svg"
-
 export default {
-  components: {
-    SvgLinkedIn,
-    SvgGitHub
-  },
   props: {
     parentComponent: {
       type: String,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
       websites: [
         {
-          link: "https://github.com/OziOcb",
-          svg: "SvgGitHub"
+          link: 'https://github.com/OziOcb',
+          svg: 'SvgGitHub',
         },
         {
-          link: "https://www.linkedin.com/in/paul-ozyzniewski/",
-          svg: "SvgLinkedIn"
-        }
-      ]
+          link: 'https://www.linkedin.com/in/paul-ozyzniewski/',
+          svg: 'SvgLinkedIn',
+        },
+      ],
     }
-  }
+  },
 }
 </script>
 

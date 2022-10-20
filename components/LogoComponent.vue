@@ -1,21 +1,12 @@
 <template>
   <NuxtLink to="/" class="logo">
     <span class="sr-only">{{ desc }}</span>
-    <component :is="showCorrectLogo"></component>
+    <Icon :name="showCorrectLogo" size="100%" />
   </NuxtLink>
 </template>
 
 <script>
-import SvgTheLogo from '~/assets/img/svg/theLogo.svg'
-import SvgTheLogoSimple from '~/assets/img/svg/theLogo--simple.svg'
-import SvgTheLogoFullWhite from '~/assets/img/svg/theLogo--full--white.svg'
-
 export default {
-  components: {
-    SvgTheLogo,
-    SvgTheLogoSimple,
-    SvgTheLogoFullWhite,
-  },
   props: {
     version: {
       type: String,
