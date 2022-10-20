@@ -1,6 +1,10 @@
 <template>
   <div class="theAboutMeGallery" :style="cssProps">
-    <SvgAboutMeBackgroundGrid class="theAboutMeGallery__backgroundFigure" />
+    <Icon
+      name="SvgAboutMeBackgroundGrid"
+      class="theAboutMeGallery__backgroundFigure"
+      size="100%"
+    />
 
     <div class="theAboutMeGallery__secondaryFigure">
       <!-- FIXME  -->
@@ -25,12 +29,7 @@
 </template>
 
 <script>
-import SvgAboutMeBackgroundGrid from '~/assets/img/svg/aboutMeBackgroundGrid.svg'
-
 export default {
-  components: {
-    SvgAboutMeBackgroundGrid,
-  },
   props: {
     galleryDetails: {
       type: Object,

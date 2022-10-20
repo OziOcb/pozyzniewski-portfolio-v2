@@ -6,7 +6,9 @@
       </div>
 
       <div class="ghCalendar__weekDays">
-        <span v-for="(weekDay, index) in weekDays" :key="index">{{ weekDay }}</span>
+        <span v-for="(weekDay, index) in weekDays" :key="index">{{
+          weekDay
+        }}</span>
       </div>
 
       <div class="ghCalendar__commits commitsGrid">
@@ -14,25 +16,33 @@
       </div>
 
       <div class="ghCalendar__overlay">
-        <SvgGitHubBlack />
+        <Icon name="SvgGitHubBlack" />
       </div>
     </div>
   </button>
 </template>
 
 <script>
-import SvgGitHubBlack from "~/assets/img/svg/gitHub--black.svg"
-
 export default {
-  components: {
-    SvgGitHubBlack
-  },
   data() {
     return {
-      months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-      weekDays: ["Mon", "Wed", "Fri"]
+      months: [
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+        'Nov',
+        'Dec',
+      ],
+      weekDays: ['Mon', 'Wed', 'Fri'],
     }
-  }
+  },
 }
 </script>
 
@@ -47,7 +57,8 @@ export default {
   border: none;
   border-radius: 0.625em;
   box-shadow: 0px 0.6em 1.25em $color-github-calendar-shadow;
-  transition: background $duration-animation-base linear, box-shadow $duration-animation-base linear,
+  transition: background $duration-animation-base linear,
+    box-shadow $duration-animation-base linear,
     transform $duration-animation-base linear;
   cursor: pointer;
 
@@ -58,7 +69,8 @@ export default {
   }
   &:focus {
     outline: 0;
-    box-shadow: 0px 1.25em 2.5em $color-button-shadow, 0 0 2px 4px $color-outline;
+    box-shadow: 0px 1.25em 2.5em $color-button-shadow,
+      0 0 2px 4px $color-outline;
   }
 
   @media (min-width: $breakpoint-lg) {
@@ -72,8 +84,8 @@ export default {
     grid-template-columns: 40px auto;
     grid-template-rows: 40px auto;
     grid-template-areas:
-      ". months"
-      "weekDays commitsGrid";
+      '. months'
+      'weekDays commitsGrid';
   }
 
   &__months {
@@ -179,7 +191,8 @@ export default {
 
       &:before,
       &:after {
-        animation: commitBoxGlare $duration-animation-github-calendar linear infinite;
+        animation: commitBoxGlare $duration-animation-github-calendar linear
+          infinite;
       }
     }
 
@@ -194,7 +207,7 @@ export default {
         top: 0;
         left: -100%;
         height: 100%;
-        content: "";
+        content: '';
         background-color: $color-white;
         transform: skewX(25deg);
       }
