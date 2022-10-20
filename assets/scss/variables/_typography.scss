@@ -138,7 +138,7 @@
 // Author: Mike Riethmuller | https://madebymike.com.au/writing/precise-control-responsive-typography/ I
 
 @function typography-calc-interpolation($min-screen, $min-value, $max-screen, $max-value) {
-  $a: ($max-value - $min-value) / ($max-screen - $min-screen);
+  $a: calc(($max-value - $min-value) / ($max-screen - $min-screen));
   $b: $min-value - $a * $min-screen;
 
   $sign: "+";
