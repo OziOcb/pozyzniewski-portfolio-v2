@@ -1,7 +1,12 @@
 <template>
-  <div>
-    <AppHeader />
+  <div class="layout">
+    <TheHeader />
 
-    <slot />
+    <ThePageTransitionOverlay />
+
+    <div class="pageTransitionWrapper">
+      <slot />
+      <TheFooter />
+    </div>
   </div>
 </template>
