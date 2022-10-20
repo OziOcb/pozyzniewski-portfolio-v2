@@ -22,12 +22,12 @@ export default defineNuxtConfig({
   //     apiBase: '', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
   //   },
   // },
-  css: ['@/assets/sass/styles/index.sass'],
+  css: ['@/assets/scss/styles/index.scss'],
   vite: {
     css: {
       preprocessorOptions: {
-        sass: {
-          additionalData: '@import "@/assets/sass/variables/_index.sass"\n',
+        scss: {
+          additionalData: '@use "@/assets/scss/variables/_index.scss" as *;',
         },
       },
     },

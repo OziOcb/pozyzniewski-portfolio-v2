@@ -18,7 +18,8 @@
 const countStore = useCounterStore()
 </script>
 
-<style lang="sass">
-a
-  color: $color-primary
+<style lang="scss">
+a {
+  color: $color-primary;
+}
 </style>
