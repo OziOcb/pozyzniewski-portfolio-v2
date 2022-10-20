@@ -5,7 +5,7 @@
   <button @click="countStore.increment()">+</button>
 
   <h2>Assets</h2>
-  <img src="~/assets/img/youtube.png" alt="YouTube" width="24" />
+  <img src="~/assets/img/png/mbp.png" alt="YouTube" width="44" />
   <Icon name="uil:github" size="24px" />
   <Icon name="IconInstagram" size="24px" />
 
