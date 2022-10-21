@@ -7,18 +7,16 @@
     />
 
     <div class="theAboutMeGallery__secondaryFigure">
-      <img
+      <NuxtImg
         class="theAboutMeGallery__secondaryImg"
-        quality="90"
         :src="secondaryImgSrc(galleryDetails.secondaryImg)"
         :alt="secondaryAlt()"
       />
     </div>
 
     <div class="theAboutMeGallery__primaryFigure">
-      <img
+      <NuxtImg
         class="theAboutMeGallery__primaryImg"
-        quality="90"
         :src="primaryImgSrc(galleryDetails.primaryImg)"
         :alt="primaryAlt()"
       />

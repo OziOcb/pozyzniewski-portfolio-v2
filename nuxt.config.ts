@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     dirs: ['stores'],
   },
   modules: [
+    '@nuxt/image-edge',
     'nuxt-icon',
     [
       '@pinia/nuxt',
