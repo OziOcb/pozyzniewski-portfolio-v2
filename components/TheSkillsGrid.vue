@@ -7,32 +7,13 @@
       :class="tile"
       class="skillsGrid__skillBox"
     >
-      <component :is="`Svg${tile}`"></component>
+      <Icon :name="`SkillsGridSvg${tile}`" size="100%"></Icon>
     </div>
   </div>
 </template>
 
 <script>
-// prettier-ignore
-import {
-  SvgAdobeIllustrator,SvgAdobePhotoshop,SvgAdobeTypekit,SvgAdobeXd,SvgAtom,SvgBabel,
-  SvgBasecamp,SvgBit,SvgBootstrap,SvgCodeoen,SvgCodeSandbox,SvgCodewars,SvgCss,SvgCssWizardy,
-  SvgEsLint,SvgFigma,SvgFilleZilla,SvgFirebase,SvgGit,SvgGitHub,SvgGitLab,SvgGraphQl,SvgGulp,
-  SvgHtml5,SvgJavascript,SvgJekyll,SvgJest,SvgJson,SvgMarkdown,SvgMaterialDesign,SvgNpm,
-  SvgNuxtJs,SvgPostman,SvgPowerShell,SvgPrettier,SvgSass,SvgVSC,SvgVueJs,SvgVue,SvgWebpack,
-  SvgYarn,SvgZapier
-} from "~/assets/img/svg/skillsGrid/index.js"
-
 export default {
-  // prettier-ignore
-  components: {
-    SvgAdobeIllustrator,SvgAdobePhotoshop,SvgAdobeTypekit,SvgAdobeXd,SvgAtom,SvgBabel,
-    SvgBasecamp,SvgBit,SvgBootstrap,SvgCodeoen,SvgCodeSandbox,SvgCodewars,SvgCss,SvgCssWizardy,
-    SvgEsLint,SvgFigma,SvgFilleZilla,SvgFirebase,SvgGit,SvgGitHub,SvgGitLab,SvgGraphQl,SvgGulp,
-    SvgHtml5,SvgJavascript,SvgJekyll,SvgJest,SvgJson,SvgMarkdown,SvgMaterialDesign,SvgNpm,
-    SvgNuxtJs,SvgPostman,SvgPowerShell,SvgPrettier,SvgSass,SvgVSC,SvgVueJs,SvgVue,SvgWebpack,
-    SvgYarn,SvgZapier
-  },
   data() {
     return {
       // prettier-ignore
@@ -40,7 +21,7 @@ export default {
         "Markdown","FilleZilla","PowerShell","MaterialDesign","Css","Git","Basecamp","GraphQl",
         "CssWizardy","Bit","NuxtJs","Bootstrap","EsLint","VueJs","GitHub","AdobePhotoshop",
         "GitLab","VSC","Gulp","Figma","AdobeXd","Sass","Prettier","Html5","Npm","Firebase",
-        "Webpack","Javascript","Codewars","Vue","Codeoen","CodeSandbox","Atom","AdobeTypekit",
+        "Webpack","Javascript","CodeWars","Vue","CodePen","CodeSandbox","Atom","AdobeTypekit",
         "Postman","Zapier","Babel","AdobeIllustrator","Yarn","Jest","Jekyll","Json"
       ],
     }
