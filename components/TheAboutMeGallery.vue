@@ -7,23 +7,21 @@
     />
 
     <div class="theAboutMeGallery__secondaryFigure">
-      <!-- FIXME  -->
-      <!-- <img
+      <img
         class="theAboutMeGallery__secondaryImg"
         quality="90"
         :src="secondaryImgSrc(galleryDetails.secondaryImg)"
         :alt="secondaryAlt()"
-      /> -->
+      />
     </div>
 
     <div class="theAboutMeGallery__primaryFigure">
-      <!-- FIXME  -->
-      <!-- <img
+      <img
         class="theAboutMeGallery__primaryImg"
         quality="90"
         :src="primaryImgSrc(galleryDetails.primaryImg)"
         :alt="primaryAlt()"
-      /> -->
+      />
     </div>
   </div>
 </template>
@@ -54,10 +52,10 @@ export default {
   },
   methods: {
     primaryImgSrc(imgName = 'portrait-default') {
-      return require(`!!assets-loader?width=250!~/assets/img/jpg/${imgName}.jpg`)
+      return `/assets/img/jpg/${imgName}.jpg`
     },
     secondaryImgSrc(imgName = 'theAboutMeGallerySecondary') {
-      return require(`!!assets-loader?width=380!~/assets/img/jpg/${imgName}.jpg`)
+      return `/assets/img/jpg/${imgName}.jpg`
     },
     primaryAlt() {
       return this.galleryDetails.primaryAlt
