@@ -112,7 +112,7 @@ export default {
       height: 100%;
       opacity: 0.15;
       content: '';
-      background: url('~@/assets/img/png/mbp.png') 60vw center no-repeat;
+      background: url('/assets/img/png/mbp.png') 60vw center no-repeat;
       @media (min-width: $breakpoint-xxl) {
         background-position: 53vw;
       }
