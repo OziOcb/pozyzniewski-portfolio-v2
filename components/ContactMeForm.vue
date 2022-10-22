@@ -21,7 +21,7 @@
     -->
     <BaseInput
       id="name"
-      v-model.trim="v$.formResponses.name.$model"
+      v-model:value.trim="v$.formResponses.name.$model"
       type="text"
       label="Name*"
       :class="{
@@ -30,19 +30,19 @@
       }"
     >
       <p v-if="errors" class="error">
-        <span v-if="!v$.formResponses.name.required"
+        <span v-if="v$.formResponses.name.required.$invalid"
           >this field is required.</span
         >
-        <span v-if="!v$.formResponses.name.minLength">
+        <span v-if="v$.formResponses.name.minLength.$invalid">
           Field must have at least
-          {{ v$.formResponses.name.$params.minLength.min }} characters.
+          {{ v$.formResponses.name.minLength.$params.min }} characters.
         </span>
       </p>
     </BaseInput>
 
     <BaseInput
       id="email"
-      v-model.trim="v$.formResponses.email.$model"
+      v-model:value.trim="v$.formResponses.email.$model"
       type="email"
       label="Email*"
       :class="{
@@ -51,10 +51,10 @@
       }"
     >
       <p v-if="errors" class="error">
-        <span v-if="!v$.formResponses.email.required"
+        <span v-if="v$.formResponses.email.required.$invalid"
           >this field is required.</span
         >
-        <span v-if="!v$.formResponses.email.email"
+        <span v-if="v$.formResponses.email.email.$invalid"
           >Needs to be a valid email.</span
         >
       </p>
@@ -62,7 +62,7 @@
 
     <BaseInput
       id="phone"
-      v-model.trim="v$.formResponses.phone.$model"
+      v-model:value.trim="v$.formResponses.phone.$model"
       type="tel"
       label="Phone"
       :class="{
@@ -71,19 +71,19 @@
       }"
     >
       <p v-if="errors" class="error">
-        <span v-if="!v$.formResponses.phone.numeric"
+        <span v-if="v$.formResponses.phone.numeric.$invalid"
           >Needs to be a valid phone number.</span
         >
-        <span v-if="!v$.formResponses.phone.minLength">
+        <span v-if="v$.formResponses.phone.minLength.$invalid">
           Field must have at least
-          {{ v$.formResponses.phone.$params.minLength.min }} characters.
+          {{ v$.formResponses.phone.minLength.$params.min }} characters.
         </span>
       </p>
     </BaseInput>
 
     <BaseInput
       id="webOrCompanyName"
-      v-model.trim="v$.formResponses.webOrCompanyName.$model"
+      v-model:value.trim="v$.formResponses.webOrCompanyName.$model"
       type="text"
       label="Website Or Company Name"
       :class="{
@@ -94,9 +94,9 @@
       }"
     >
       <p v-if="errors" class="error">
-        <span v-if="!v$.formResponses.webOrCompanyName.minLength">
+        <span v-if="v$.formResponses.webOrCompanyName.minLength.$invalid">
           Field must have at least
-          {{ v$.formResponses.webOrCompanyName.$params.minLength.min }}
+          {{ v$.formResponses.webOrCompanyName.minLength.$params.min }}
           characters.
         </span>
       </p>
@@ -104,7 +104,7 @@
 
     <BaseInput
       id="message"
-      v-model.trim="v$.formResponses.message.$model"
+      v-model:value.trim="v$.formResponses.message.$model"
       type="textarea"
       label="Message*"
       :class="{
@@ -113,12 +113,12 @@
       }"
     >
       <p v-if="errors" class="error">
-        <span v-if="!v$.formResponses.message.required"
+        <span v-if="v$.formResponses.message.required.$invalid"
           >this field is required.</span
         >
-        <span v-if="!v$.formResponses.message.minLength">
+        <span v-if="v$.formResponses.message.minLength.$invalid">
           Field must have at least
-          {{ v$.formResponses.message.$params.minLength.min }} characters.
+          {{ v$.formResponses.message.minLength.$params.min }} characters.
         </span>
       </p>
     </BaseInput>
@@ -199,7 +199,9 @@ export default {
     },
     handleSubmit(e) {
       this.empty = !this.v$.formResponses.$anyDirty
-      this.errors = this.v$.formResponses.$anyError
+      this.errors =
+        !!this.v$.formResponses.$errors.length ||
+        !!this.v$.formResponses.$silentErrors.length
       this.uiState = 'submit clicked'
       if (this.errors === false && this.empty === false) {
         this.uiState = 'pending' // Disable the button while the form is submiting

@@ -8,8 +8,7 @@
         class="formField__textarea"
         placeholder=" "
         v-bind="$attrs"
-        v-on="$listeners"
-        @input="$emit('update', $event.target.value)"
+        @input="$emit('update:value', $event.target.value)"
       ></textarea>
       <input
         v-else
@@ -19,8 +18,7 @@
         :type="type"
         placeholder=" "
         v-bind="$attrs"
-        v-on="$listeners"
-        @input="$emit('update', $event.target.value)"
+        @input="$emit('update:value', $event.target.value)"
       />
 
       <label :for="id" class="formField__label">{{ label }}</label>
@@ -39,29 +37,34 @@ export default {
   // Change the v-model event name to `update` to avoid changing
   // the behavior of the native `input` event.
   // https://vuejs.org/v2/guide/components-custom-events.html#Customizing-Component-v-model
-  model: {
-    event: "update"
-  },
+  emits: ['update:value'],
   props: {
     id: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
-      default: "text",
+      default: 'text',
       // Only allow types that essentially just render text boxes.
       validator(value) {
-        return ["email", "number", "password", "search", "tel", "text", "textarea", "url"].includes(
-          value
-        )
-      }
+        return [
+          'email',
+          'number',
+          'password',
+          'search',
+          'tel',
+          'text',
+          'textarea',
+          'url',
+        ].includes(value)
+      },
     },
     label: {
       type: String,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
 
@@ -108,7 +111,7 @@ export default {
   margin: 0 auto;
   display: block;
   width: 1%;
-  content: "";
+  content: '';
   border-bottom: $size-input-border solid $color-input-border;
   transition: all ($duration-animation-input * 2);
   transform: scaleX(0);
