@@ -45,9 +45,8 @@
           <li>Name: Paul Ozyzniewski</li>
           <li>Town: Barnsley</li>
         </ul>
-        <!-- TODO: #045 - Add a scrolling effect to the contact form after clicking on the contact me button -->
         <div class="aboutMe__btn">
-          <BaseLinkLikeButton class="btn" to="/#contactMe">CONTACT ME</BaseLinkLikeButton>
+          <BaseLinkLikeButton class="btn" to="#contactMe">CONTACT ME</BaseLinkLikeButton>
         </div>
       </div>
     </div>
