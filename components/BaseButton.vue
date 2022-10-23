@@ -1,8 +1,20 @@
 <template>
-  <button class="baseButton">
+  <button :class="['baseButton', rounded && 'baseButton--rounded']">
     <slot />
   </button>
 </template>
+
+<script>
+export default {
+  name: 'BaseButton',
+  props: {
+    rounded: {
+      type: Boolean,
+      default: false,
+    },
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .baseButton {
@@ -18,6 +30,16 @@
     box-shadow $duration-animation-base linear,
     transform $duration-animation-base linear;
   cursor: pointer;
+
+  &--rounded {
+    padding: 0;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+  }
 
   &:hover,
   &:focus {

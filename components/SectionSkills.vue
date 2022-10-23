@@ -18,14 +18,41 @@
 
       <div class="calendarSection__column">
         <TheGithubCalendarDummy
-          @open-modalGithubCalendar="$refs.modalGithubCalendar.open()"
+          @open-modalGithubCalendar="isModalGithubCalendarOpen = true"
         />
       </div>
     </div>
-    <!-- FIXME: Find a replacement for SweetModal that works with nuxt3 -->
-    <!-- <SweetModal ref="modalGithubCalendar" overlay-theme="dark">
-      <TheGithubCalendar />
-    </SweetModal> -->
+
+    <TheModal
+      v-if="isModalGithubCalendarOpen"
+      @close="isModalGithubCalendarOpen = false"
+    >
+      <div>
+        START Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+        laudantium recusandae totam repellendus quibusdam impedit illo error
+        optio accusantium maxime molestias voluptatem amet, adipisci, ullam
+        dolore? Amet est quibusdam vel?
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+        laudantium recusandae totam repellendus quibusdam impedit illo error
+        optio accusantium maxime molestias voluptatem amet, adipisci, ullam
+        dolore? Amet est quibusdam vel?
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+        laudantium recusandae totam repellendus quibusdam impedit illo error
+        optio accusantium maxime molestias voluptatem amet, adipisci, ullam
+        dolore? Amet est quibusdam vel?
+      </div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
+        laudantium recusandae totam repellendus quibusdam impedit illo error
+        optio accusantium maxime molestias voluptatem amet, adipisci, ullam
+        dolore? Amet est quibusdam vel? END
+      </div>
+      <!-- <TheGithubCalendar /> -->
+    </TheModal>
     <!-- GitHub Calendar End -->
 
     <!-- SkillsGrid Calendar -->
@@ -62,7 +89,7 @@ import QuoteBlock from '@/components/QuoteBlock.vue'
 // Github Calendar
 import TheGithubCalendar from '@/components/TheGithubCalendar.vue'
 import TheGithubCalendarDummy from '@/components/TheGithubCalendar--dummy.vue'
-// import { SweetModal } from "sweet-modal-vue"
+import TheModal from '@/components/TheModal.vue'
 // SkillsGrid
 import TheSkillsGrid from '@/components/TheSkillsGrid.vue'
 
@@ -70,10 +97,14 @@ export default {
   components: {
     TheGithubCalendar,
     TheGithubCalendarDummy,
-    // SweetModal,
+    TheModal,
     TheSkillsGrid,
     QuoteBlock,
   },
+
+  data: () => ({
+    isModalGithubCalendarOpen: true,
+  }),
 }
 </script>
 
