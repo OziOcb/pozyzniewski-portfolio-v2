@@ -6,73 +6,91 @@
 </template>
 
 <script>
-import GithubCalendar from "github-calendar"
+import GithubCalendar from 'github-calendar'
 
 export default {
   mounted() {
-    GithubCalendar(".calendar", "OziOcb", {
-      responsive: true
+    GithubCalendar('.calendar', 'OziOcb', {
+      responsive: true,
     })
-  }
+  },
 }
 </script>
 
 <style lang="scss">
+// Below styles are copied from here - https://unpkg.com/github-calendar@2.3.1/dist/github-calendar-responsive.css
+
+rect.ContributionCalendar-day[data-level='0'] {
+  fill: rgba($color-github-calendar-single-commit-bg, 0.05);
+}
+
+rect.ContributionCalendar-day[data-level='1'] {
+  fill: rgba($color-github-calendar-single-commit-bg, 0.3);
+}
+
+rect.ContributionCalendar-day[data-level='2'] {
+  fill: rgba($color-github-calendar-single-commit-bg, 0.6);
+}
+
+rect.ContributionCalendar-day[data-level='3'] {
+  fill: rgba($color-github-calendar-single-commit-bg, 0.8);
+}
+
+rect.ContributionCalendar-day[data-level='4'] {
+  fill: rgba($color-github-calendar-single-commit-bg, 1);
+}
+
+.calendar .width-full > .float-left {
+  display: none;
+}
+
 .calendar {
-  font-family: Helvetica, sans-serif;
-  border-radius: 0.625em;
-}
-
-.calendar-graph {
-  padding: 0.25em 0 0;
-
-  text.wday,
-  text.month {
-    font-size: 0.75em;
-    fill: #aaa;
-  }
-  /* level 1 (no commits) */
-  rect.day[fill="#ebedf0"] {
-    fill: rgba($color-github-calendar-single-commit-bg, 0.05);
-  }
-  /* level 2 */
-  rect.day[fill="#c6e48b"] {
-    fill: rgba($color-github-calendar-single-commit-bg, 0.3);
-  }
-  /* level 3 */
-  rect.day[fill="#7bc96f"] {
-    fill: rgba($color-github-calendar-single-commit-bg, 0.6);
-  }
-  /* level 4 */
-  rect.day[fill="#239a3b"] {
-    fill: rgba($color-github-calendar-single-commit-bg, 0.8);
-  }
-  /* level 5 */
-  rect.day[fill="#196127"] {
-    fill: rgba($color-github-calendar-single-commit-bg, 1);
-  }
-}
-
-.contrib-column {
-  padding: 0.625em 0;
-  font-size: 0.75rem;
-  border-top: 1px solid #ddd;
-}
-
-.table-column {
+  font-family: Helvetica, arial;
+  width: 100%;
+  min-height: 243px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: -1.8rem;
   text-align: center;
 }
 
-.contrib-number {
-  display: block;
-  font-size: 2rem;
-  line-height: 1.3em;
-  font-weight: 400;
-  color: #333;
+.contrib-column {
+  padding: 15px 0;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  border-left: none;
+  @media (min-width: $breakpoint-sm) {
+    border-left: 1px solid #ddd;
+  }
 }
 
-#user-activity-overview,
-.contrib-footer {
+.contrib-column-first {
+  border-left: none;
+}
+
+.table-column {
+  @media (min-width: $breakpoint-sm) {
+    display: table-cell;
+    width: 1%;
+    padding-right: 10px;
+    padding-left: 10px;
+    vertical-align: top;
+  }
+}
+
+.contrib-number {
+  font-size: 1.5rem;
+  display: block;
+  color: $color-text-primary;
+}
+
+#user-activity-overview {
   display: none;
+}
+
+text.ContributionCalendar-label {
+  fill: #ccc;
+  font-size: 11px;
 }
 </style>

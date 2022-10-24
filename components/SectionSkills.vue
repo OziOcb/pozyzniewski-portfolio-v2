@@ -26,30 +26,7 @@
     </div>
 
     <TheModal ref="modalGithubCalendar">
-      <div>
-        START Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-        laudantium recusandae totam repellendus quibusdam impedit illo error
-        optio accusantium maxime molestias voluptatem amet, adipisci, ullam
-        dolore? Amet est quibusdam vel?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-        laudantium recusandae totam repellendus quibusdam impedit illo error
-        optio accusantium maxime molestias voluptatem amet, adipisci, ullam
-        dolore? Amet est quibusdam vel?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-        laudantium recusandae totam repellendus quibusdam impedit illo error
-        optio accusantium maxime molestias voluptatem amet, adipisci, ullam
-        dolore? Amet est quibusdam vel?
-      </div>
-      <div>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-        laudantium recusandae totam repellendus quibusdam impedit illo error
-        optio accusantium maxime molestias voluptatem amet, adipisci, ullam
-        dolore? Amet est quibusdam vel? END
-      </div>
+      <TheGithubCalendar />
     </TheModal>
     <!-- GitHub Calendar End -->
 
