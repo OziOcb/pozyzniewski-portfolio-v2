@@ -18,15 +18,14 @@
 
       <div class="calendarSection__column">
         <TheGithubCalendarDummy
-          @open-modalGithubCalendar="isModalGithubCalendarOpen = true"
+          @open-modalGithubCalendar="
+            this.$refs.modalGithubCalendar.toggleHandler(true)
+          "
         />
       </div>
     </div>
 
-    <TheModal
-      v-if="isModalGithubCalendarOpen"
-      @close="isModalGithubCalendarOpen = false"
-    >
+    <TheModal ref="modalGithubCalendar">
       <div>
         START Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
         laudantium recusandae totam repellendus quibusdam impedit illo error
@@ -51,7 +50,6 @@
         optio accusantium maxime molestias voluptatem amet, adipisci, ullam
         dolore? Amet est quibusdam vel? END
       </div>
-      <!-- <TheGithubCalendar /> -->
     </TheModal>
     <!-- GitHub Calendar End -->
 
@@ -101,10 +99,6 @@ export default {
     TheSkillsGrid,
     QuoteBlock,
   },
-
-  data: () => ({
-    isModalGithubCalendarOpen: true,
-  }),
 }
 </script>
 
