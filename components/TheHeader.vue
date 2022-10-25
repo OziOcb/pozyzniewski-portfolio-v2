@@ -59,12 +59,12 @@ export default {
         },
         {
           name: 'FAQ',
-          url: '/faq/',
+          url: '/faq',
         },
-        // {
-        //   name: 'Blog',
-        //   url: '/blog/',
-        // },
+        {
+          name: 'Blog',
+          url: '/blog',
+        },
       ],
     }
   },

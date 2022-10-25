@@ -178,10 +178,17 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Veriffica App - Terms And Conditions',
-    description:
-      'Terms And Conditions made special for the Verrifica mobile app',
+  setup() {
+    useHead({
+      title: 'Veriffica App - Terms And Conditions',
+      meta: [
+        {
+          name: 'description',
+          content:
+            'Terms And Conditions made special for the Veriffica mobile app',
+        },
+      ],
+    })
   },
 }
 </script>

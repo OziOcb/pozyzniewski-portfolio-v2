@@ -23,11 +23,12 @@ import SectionFaq from '@/components/SectionFaq.vue'
 import SectionContact from '@/components/SectionContact.vue'
 
 export default {
-  metaInfo: {
-    title: 'FAQ',
-    meta: [{ name: 'robots', content: 'noindex,nofollow,disallow' }], // Remove when this page is ready
-  },
   components: { SectionHero, SectionFaq, SectionContact },
   mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
+  setup() {
+    useHead({
+      title: 'FAQ',
+    })
+  },
 }
 </script>

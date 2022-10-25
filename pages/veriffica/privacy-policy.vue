@@ -216,9 +216,16 @@
 
 <script>
 export default {
-  metaInfo: {
-    title: 'Veriffica App - Privacy Policy',
-    description: 'Privacy Policy made special for the Verrifica mobile app',
+  setup() {
+    useHead({
+      title: 'Veriffica App - Privacy Policy',
+      meta: [
+        {
+          name: 'description',
+          content: 'Privacy Policy made special for the Veriffica mobile app',
+        },
+      ],
+    })
   },
 }
 </script>

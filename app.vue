@@ -12,6 +12,17 @@ useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} - ${appConfig.title}` : appConfig.title
   },
-  meta: [{ name: 'description', content: appConfig.description }] as Meta[],
+  meta: [
+    { name: 'description', content: appConfig.description },
+    {
+      name: 'author',
+      content: appConfig.author,
+    },
+    {
+      name: 'keywords',
+      content: appConfig.keywords,
+    },
+    { name: 'robots', content: appConfig.robots },
+  ] as Meta[],
 })
 </script>

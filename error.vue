@@ -10,10 +10,13 @@ import {
 } from '@/mixins/pageTransitions'
 
 export default {
-  metaInfo: {
-    title: 'FAQ',
-    meta: [{ name: 'robots', content: 'noindex,nofollow,disallow' }], // Remove when this page is ready
-  },
   mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
+  setup() {
+    const appConfig = useAppConfig()
+
+    useHead({
+      title: `Error Page - ${appConfig.title}`,
+    })
+  },
 }
 </script>

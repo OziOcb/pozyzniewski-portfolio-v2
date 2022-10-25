@@ -27,9 +27,6 @@ import {
 } from '@/mixins/pageTransitions'
 
 export default {
-  metaInfo: {
-    title: 'Home Page',
-  },
   components: {
     SectionHero,
     SectionAbout,
@@ -38,5 +35,10 @@ export default {
     SectionContact,
   },
   mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
+  setup() {
+    useHead({
+      title: 'Home Page',
+    })
+  },
 }
 </script>
