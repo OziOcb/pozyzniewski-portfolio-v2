@@ -1,6 +1,11 @@
 import { gsap } from "gsap"
 
 const gsapTransition = ({ onComplete, pageEnter }) => {
+  // // prettier-ignore
+  // console.log("-\n--\n onComplete \n >", onComplete, "\n--\n-") // REMOVE_ME: remove when done!
+  // // prettier-ignore
+  // console.log("-\n--\n pageEnter \n >", pageEnter, "\n--\n-") // REMOVE_ME: remove when done!
+  // console.log('-------------------------------------------------');
   const tl = gsap.timeline({ onComplete })
   // prettier-ignore
   tl.to(".pageTransitionWrapper", durationTransitionForWrapper, { autoAlpha: 0 }, 0)

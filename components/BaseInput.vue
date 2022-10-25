@@ -37,7 +37,7 @@ export default {
   // Change the v-model event name to `update` to avoid changing
   // the behavior of the native `input` event.
   // https://vuejs.org/v2/guide/components-custom-events.html#Customizing-Component-v-model
-  emits: ['update:value'],
+  emits: ["update:value"],
   props: {
     id: {
       type: String,
@@ -45,19 +45,19 @@ export default {
     },
     type: {
       type: String,
-      default: 'text',
+      default: "text",
       // Only allow types that essentially just render text boxes.
       validator(value) {
         return [
-          'email',
-          'number',
-          'password',
-          'search',
-          'tel',
-          'text',
-          'textarea',
-          'url',
-        ].includes(value)
+          "email",
+          "number",
+          "password",
+          "search",
+          "tel",
+          "text",
+          "textarea",
+          "url",
+        ].includes(value);
       },
     },
     label: {
@@ -65,7 +65,7 @@ export default {
       required: true,
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -111,7 +111,7 @@ export default {
   margin: 0 auto;
   display: block;
   width: 1%;
-  content: '';
+  content: "";
   border-bottom: $size-input-border solid $color-input-border;
   transition: all ($duration-animation-input * 2);
   transform: scaleX(0);

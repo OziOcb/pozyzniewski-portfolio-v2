@@ -2,6 +2,8 @@
   <header class="header">
     <div class="header__inner container">
       <LogoComponent class="header__logo" version="simple" desc="Main Logo" />
+      <!-- REMOVE_ME: remove when done! -->
+      <NuxtLink to="/faq">faq</NuxtLink>
 
       <div class="header__hamburger">
         <button
@@ -122,7 +124,7 @@ export default {
       .to('.pageTransitionOverlay', 0.6, { autoAlpha: 1 }, 0.5)
 
     navList.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('active--exact')) {
+      if (!e.target.classList.contains('router-link-exact-active')) {
         clickNavLinkHandler.play()
       } else {
         hamburgerMotion.reverse(0)
@@ -244,7 +246,7 @@ export default {
   }
 }
 
-.nav .active--exact {
+.nav .router-link-exact-active {
   text-decoration: underline;
 }
 </style>

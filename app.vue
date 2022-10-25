@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import { Meta } from '@zhead/schema'
 const appConfig = useAppConfig()
 
 useHead({
@@ -23,6 +22,6 @@ useHead({
       content: appConfig.keywords,
     },
     { name: 'robots', content: appConfig.robots },
-  ] as Meta[],
+  ],
 })
 </script>

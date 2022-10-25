@@ -21,7 +21,7 @@
     -->
     <BaseInput
       id="name"
-      v-model:value.trim="v$.formResponses.name.$model"
+      v-model:value.trim="formResponses.name"
       type="text"
       label="Name*"
       :class="{
@@ -42,7 +42,7 @@
 
     <BaseInput
       id="email"
-      v-model:value.trim="v$.formResponses.email.$model"
+      v-model:value.trim="formResponses.email"
       type="email"
       label="Email*"
       :class="{
@@ -62,7 +62,7 @@
 
     <BaseInput
       id="phone"
-      v-model:value.trim="v$.formResponses.phone.$model"
+      v-model:value.trim="formResponses.phone"
       type="tel"
       label="Phone"
       :class="{
@@ -83,14 +83,12 @@
 
     <BaseInput
       id="webOrCompanyName"
-      v-model:value.trim="v$.formResponses.webOrCompanyName.$model"
+      v-model:value.trim="formResponses.webOrCompanyName"
       type="text"
       label="Website Or Company Name"
       :class="{
-        'formField--error':
-          errors && v$.formResponses.webOrCompanyName.$invalid,
-        'formField--success':
-          errors && !v$.formResponses.webOrCompanyName.$invalid,
+        'formField--error': errors && v$.formResponses.webOrCompanyName.$invalid,
+        'formField--success': errors && !v$.formResponses.webOrCompanyName.$invalid,
       }"
     >
       <p v-if="errors" class="error">
@@ -104,7 +102,7 @@
 
     <BaseInput
       id="message"
-      v-model:value.trim="v$.formResponses.message.$model"
+      v-model:value.trim="formResponses.message"
       type="textarea"
       label="Message*"
       :class="{
@@ -143,18 +141,18 @@
 </template>
 
 <script>
-import { useVuelidate } from '@vuelidate/core'
-import { required, minLength, email, numeric } from '@vuelidate/validators'
+import { useVuelidate } from "@vuelidate/core";
+import { required, minLength, email, numeric } from "@vuelidate/validators";
 
 export default {
   setup() {
     return {
-      v$: useVuelidate(),
-    }
+      v$: useVuelidate({ $autoDirty: true }),
+    };
   },
   data() {
     return {
-      uiState: 'submit not clicked',
+      uiState: "submit not clicked",
       errors: false,
       empty: true,
       formResponses: {
@@ -164,70 +162,70 @@ export default {
         webOrCompanyName: null,
         message: null,
       },
-    }
+    };
   },
-  validations: {
-    formResponses: {
-      name: {
-        required,
-        minLength: minLength(2),
+  validations() {
+    return {
+      formResponses: {
+        name: {
+          required,
+          minLength: minLength(2),
+        },
+        email: {
+          required,
+          email,
+        },
+        phone: {
+          numeric,
+          minLength: minLength(8),
+        },
+        webOrCompanyName: {
+          minLength: minLength(2),
+        },
+        message: {
+          required,
+          minLength: minLength(12),
+        },
       },
-      email: {
-        required,
-        email,
-      },
-      phone: {
-        numeric,
-        minLength: minLength(8),
-      },
-      webOrCompanyName: {
-        minLength: minLength(2),
-      },
-      message: {
-        required,
-        minLength: minLength(12),
-      },
-    },
+    };
   },
   methods: {
     encode(data) {
       return Object.keys(data)
-        .map(
-          (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-        )
-        .join('&')
+        .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .join("&");
     },
     handleSubmit(e) {
-      this.empty = !this.v$.formResponses.$anyDirty
+      this.empty = !this.v$.formResponses.$anyDirty;
       this.errors =
         !!this.v$.formResponses.$errors.length ||
-        !!this.v$.formResponses.$silentErrors.length
-      this.uiState = 'submit clicked'
+        !!this.v$.formResponses.$silentErrors.length;
+      this.uiState = "submit clicked";
       if (this.errors === false && this.empty === false) {
-        this.uiState = 'pending' // Disable the button while the form is submiting
-        fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        this.uiState = "pending"; // Disable the button while the form is submiting
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
           body: this.encode({
-            'form-name': e.target.getAttribute('name'),
+            "form-name": e.target.getAttribute("name"),
             ...this.formResponses,
           }),
         })
           .then(() => {
-            this.uiState = 'form submitted'
+            this.uiState = "form submitted";
             this.formResponses = {
               name: null,
               email: null,
               phone: null,
               webOrCompanyName: null,
               message: null,
-            }
+            };
           })
-          .catch((error) => alert(error))
+          .catch((error) => alert(error));
       }
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

@@ -256,7 +256,7 @@ export default {
   border: 1px solid $color-text-lightest;
   border-radius: 3px;
 
-  &.active--exact {
+  &.router-link-exact-active {
     color: $color-text-lightest;
     background-color: $color-black;
     border-color: $color-black;

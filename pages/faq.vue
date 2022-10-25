@@ -13,22 +13,16 @@
   </main>
 </template>
 
-<script>
+<script setup>
 import {
-  basicPageTransitionEnter,
-  basicPageTransitionLeave,
-} from '@/mixins/pageTransitions'
-import SectionHero from '@/components/SectionHero.vue'
-import SectionFaq from '@/components/SectionFaq.vue'
-import SectionContact from '@/components/SectionContact.vue'
+  useBasicPageTransitionEnter,
+  useBasicPageTransitionLeave,
+} from '@/composable/pageTransitions'
 
-export default {
-  components: { SectionHero, SectionFaq, SectionContact },
-  mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
-  setup() {
-    useHead({
-      title: 'FAQ',
-    })
-  },
-}
+useBasicPageTransitionEnter()
+useBasicPageTransitionLeave()
+
+useHead({
+  title: 'FAQ',
+})
 </script>

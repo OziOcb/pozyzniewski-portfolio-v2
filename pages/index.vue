@@ -15,30 +15,20 @@
   </main>
 </template>
 
-<script>
-import SectionHero from '@/components/SectionHero.vue'
-import SectionAbout from '@/components/SectionAbout.vue'
-import SectionSkills from '@/components/SectionSkills.vue'
-import SectionPortfolio from '@/components/SectionPortfolio.vue'
-import SectionContact from '@/components/SectionContact.vue'
+<script setup>
 import {
-  basicPageTransitionEnter,
-  basicPageTransitionLeave,
-} from '@/mixins/pageTransitions'
+  useBasicPageTransitionEnter,
+  useBasicPageTransitionLeave,
+} from '@/composable/pageTransitions'
 
-export default {
-  components: {
-    SectionHero,
-    SectionAbout,
-    SectionSkills,
-    SectionPortfolio,
-    SectionContact,
-  },
-  mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
-  setup() {
-    useHead({
-      title: 'Home Page',
-    })
-  },
-}
+useHead({
+  title: 'Home Page',
+})
+
+onMounted(() => {
+  console.log('-\n--\n hehe \n--\n-') // REMOVE_ME: remove when done!
+})
+
+useBasicPageTransitionEnter()
+useBasicPageTransitionLeave()
 </script>
