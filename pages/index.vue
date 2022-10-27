@@ -19,16 +19,12 @@
 import {
   useBasicPageTransitionEnter,
   useBasicPageTransitionLeave,
-} from '@/composable/pageTransitions'
+} from "@/composable/pageTransitions";
 
 useHead({
-  title: 'Home Page',
-})
+  title: "Home Page",
+});
 
-onMounted(() => {
-  console.log('-\n--\n hehe \n--\n-') // REMOVE_ME: remove when done!
-})
-
-useBasicPageTransitionEnter()
-useBasicPageTransitionLeave()
+useBasicPageTransitionEnter();
+useBasicPageTransitionLeave();
 </script>

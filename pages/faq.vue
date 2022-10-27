@@ -17,12 +17,12 @@
 import {
   useBasicPageTransitionEnter,
   useBasicPageTransitionLeave,
-} from '@/composable/pageTransitions'
-
-useBasicPageTransitionEnter()
-useBasicPageTransitionLeave()
+} from "@/composable/pageTransitions";
 
 useHead({
-  title: 'FAQ',
-})
+  title: "FAQ",
+});
+
+useBasicPageTransitionEnter();
+useBasicPageTransitionLeave();
 </script>
