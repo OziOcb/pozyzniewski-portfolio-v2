@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <TheHeader />
+    <TheHeader v-if="renderComponent" @forceRerender="forceRerender()" />
 
     <ThePageTransitionOverlay />
 
@@ -10,3 +10,20 @@
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    renderComponent: true,
+  }),
+  methods: {
+    forceRerender() {
+      this.renderComponent = false;
+
+      this.$nextTick(() => {
+        this.renderComponent = true;
+      });
+    },
+  },
+};
+</script>

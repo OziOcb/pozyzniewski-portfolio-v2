@@ -78,6 +78,7 @@ export default {
     gsap.set('.nav li', { translateX: -300 })
     gsap.set('.header__socialIcons--mobile', { translateX: 110 })
 
+    // prettier-ignore
     hamburgerMotion
       .addLabel('step1')
       .to('.hamburger', 0.4, { backgroundColor: 'transparent' }, 'step1')
@@ -85,17 +86,8 @@ export default {
       .to('.line04', 0.4, { translateX: '-=40' }, 'step1')
       .to('.header__menu', 0.4, { autoAlpha: 1 }, 'step1')
       .addLabel('step2')
-      .staggerTo(
-        '.nav li',
-        0.45,
-        { translateX: 0, ease: Sine.easeOut },
-        0.3,
-        0.5
-      )
-      .to('.header__socialIcons--mobile', 0.4, {
-        translateX: 0,
-        ease: Sine.easeOut,
-      })
+      .staggerTo('.nav li', 0.45, { translateX: 0, ease: Sine.easeOut }, 0.3, 0.5)
+      .to('.header__socialIcons--mobile', 0.4, {translateX: 0, ease: Sine.easeOut,})
       .to('.line02', 0.4, { translateY: '+=5' }, 'step2')
       .to('.line03', 0.4, { translateY: '-=4' }, 'step2')
       .addLabel('step3')
@@ -112,16 +104,13 @@ export default {
     const navList = document.querySelector('.nav__list')
 
     const clickNavLinkHandler = gsap.timeline({ paused: true })
+    // prettier-ignore
     clickNavLinkHandler
       .to('.nav', 0.3, { autoAlpha: 0 }, 0.1, 0)
-      .to(
-        '.header__socialIcons--mobile',
-        0.4,
-        { translateX: 110, ease: Sine.easeOut },
-        0
-      )
+      .to('.header__socialIcons--mobile', 0.4, { translateX: 110, ease: Sine.easeOut }, 0)
       .to('.pageTransitionOverlay', 0.01, { zIndex: 11 }, 0)
       .to('.pageTransitionOverlay', 0.6, { autoAlpha: 1 }, 0.5)
+      .add( () => { this.$emit('forceRerender') }, 0.8 )
 
     navList.addEventListener('click', (e) => {
       if (!e.target.classList.contains('router-link-exact-active')) {
