@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="/" class="logo">
+  <NuxtLink to="/" :class="['logo', disabled && 'logo--disabled']">
     <span class="sr-only">{{ desc }}</span>
     <Icon :name="showCorrectLogo" size="100%" />
   </NuxtLink>
@@ -11,6 +11,10 @@ export default {
     version: {
       type: String,
       default: 'SvgTheLogo',
+    },
+    disabled: {
+      type: Boolean,
+      default: false,
     },
     desc: {
       type: String,
@@ -34,5 +38,8 @@ export default {
   padding: 2px;
   line-height: 0;
   border-radius: 5px;
+  &--disabled {
+    pointer-events: none;
+  }
 }
 </style>

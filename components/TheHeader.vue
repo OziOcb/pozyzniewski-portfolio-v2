@@ -1,7 +1,7 @@
 <template>
   <header class="header">
     <div class="header__inner container">
-      <LogoComponent class="header__logo" version="simple" desc="Main Logo" />
+      <LogoComponent class="header__logo" version="simple" desc="Main Logo" :disabled="ariaExpanded" />
       <!-- REMOVE_ME: remove when done! -->
       <NuxtLink to="/faq">faq</NuxtLink>
 
@@ -118,6 +118,8 @@ export default {
       } else {
         hamburgerMotion.reverse(0)
       }
+
+      this.handleAriaExpanded()
     })
   },
   methods: {
