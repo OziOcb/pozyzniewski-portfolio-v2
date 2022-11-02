@@ -1,7 +1,12 @@
 <template>
   <header class="header">
     <div class="header__inner container">
-      <LogoComponent class="header__logo" version="simple" desc="Main Logo" :disabled="ariaExpanded" />
+      <LogoComponent
+        class="header__logo"
+        version="simple"
+        desc="Main Logo"
+        :disabled="ariaExpanded"
+      />
       <!-- REMOVE_ME: remove when done! -->
       <NuxtLink to="/faq">faq</NuxtLink>
 
@@ -32,8 +37,8 @@
           </ul>
         </nav>
 
-        <div class="header__socialIcons header__socialIcons--mobile">
-          <SocialIcons parent-component="the Header" />
+        <div class="header__platformIcons header__platformIcons--mobile">
+          <PlatformIcons parent-component="the Header" />
         </div>
       </div>
     </div>
@@ -41,16 +46,9 @@
 </template>
 
 <script>
-import LogoComponent from '@/components/LogoComponent.vue'
-import SocialIcons from '@/components/SocialIcons.vue'
-
 import { gsap, Sine, Power1 } from 'gsap'
 
 export default {
-  components: {
-    LogoComponent,
-    SocialIcons,
-  },
   data() {
     return {
       ariaExpanded: false,
@@ -76,7 +74,7 @@ export default {
 
     gsap.set('.nav', { xPercent: -50, yPercent: -50 })
     gsap.set('.nav li', { translateX: -300 })
-    gsap.set('.header__socialIcons--mobile', { translateX: 110 })
+    gsap.set('.header__platformIcons--mobile', { translateX: 110 })
 
     // prettier-ignore
     hamburgerMotion
@@ -87,7 +85,7 @@ export default {
       .to('.header__menu', 0.4, { autoAlpha: 1 }, 'step1')
       .addLabel('step2')
       .staggerTo('.nav li', 0.45, { translateX: 0, ease: Sine.easeOut }, 0.3, 0.5)
-      .to('.header__socialIcons--mobile', 0.4, {translateX: 0, ease: Sine.easeOut,})
+      .to('.header__platformIcons--mobile', 0.4, {translateX: 0, ease: Sine.easeOut,})
       .to('.line02', 0.4, { translateY: '+=5' }, 'step2')
       .to('.line03', 0.4, { translateY: '-=4' }, 'step2')
       .addLabel('step3')
@@ -107,7 +105,7 @@ export default {
     // prettier-ignore
     clickNavLinkHandler
       .to('.nav', 0.3, { autoAlpha: 0 }, 0.1, 0)
-      .to('.header__socialIcons--mobile', 0.4, { translateX: 110, ease: Sine.easeOut }, 0)
+      .to('.header__platformIcons--mobile', 0.4, { translateX: 110, ease: Sine.easeOut }, 0)
       .to('.pageTransitionOverlay', 0.01, { zIndex: 11 }, 0)
       .to('.pageTransitionOverlay', 0.6, { autoAlpha: 1 }, 0.5)
       .add( () => { this.$emit('forceRerender') }, 0.8 )
@@ -166,7 +164,7 @@ export default {
     background: $color-menu-gradient;
   }
 
-  &__socialIcons {
+  &__platformIcons {
     &--mobile {
       position: absolute;
       right: 1rem;

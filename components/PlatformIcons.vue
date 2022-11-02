@@ -1,9 +1,9 @@
 <template>
-  <div class="socialIcons">
+  <div class="platformIcons">
     <a
       v-for="(website, index) in websites"
       :key="index"
-      class="socialIcons__link"
+      class="platformIcons__link"
       :href="website.link"
       target="_blank"
       rel="noopener noreferrer"
@@ -40,7 +40,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.socialIcons {
+.platformIcons {
   display: flex;
   justify-content: center;
 

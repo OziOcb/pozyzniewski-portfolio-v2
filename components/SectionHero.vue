@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <SocialIcons class="hero__socialIcons" parent-component="the Hero" />
+    <PlatformIcons class="hero__platformIcons" parent-component="the Hero" />
 
     <div class="hero__scrollBtn">
       <!-- <font-awesome :icon="['fas', 'arrow-down']" /> -->
@@ -30,12 +30,7 @@
 </template>
 
 <script>
-import SocialIcons from '@/components/SocialIcons.vue'
-
 export default {
-  components: {
-    SocialIcons,
-  },
   props: {
     content: {
       type: Object,
@@ -93,14 +88,14 @@ export default {
   grid-template-areas:
     '. . .'
     'contentWrapper contentWrapper contentWrapper'
-    'socialIcons scrollBtn .';
+    'platformIcons scrollBtn .';
   @media (min-width: $breakpoint-lg) {
     grid-template-columns: 1fr 4fr 60px 5fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
       '. . . .'
       '. contentWrapper contentWrapper contentWrapper'
-      'socialIcons . scrollBtn .';
+      'platformIcons . scrollBtn .';
   }
   @media (min-width: $breakpoint-xl) {
     &:before {
@@ -183,8 +178,8 @@ export default {
     margin-top: 0;
   }
 
-  &__socialIcons {
-    grid-area: socialIcons;
+  &__platformIcons {
+    grid-area: platformIcons;
     align-self: end;
     margin-bottom: 13vh;
     display: flex;

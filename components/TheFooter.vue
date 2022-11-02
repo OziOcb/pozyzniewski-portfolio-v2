@@ -7,8 +7,8 @@
         desc="Footer Logo"
       />
 
-      <div class="footer__socialIcons">
-        <SocialIcons parent-component="the Footer" />
+      <div class="footer__platformIcons">
+        <PlatformIcons parent-component="the Footer" />
       </div>
 
       <p class="footer__copyright">
@@ -21,14 +21,7 @@
 </template>
 
 <script>
-import LogoComponent from '@/components/LogoComponent.vue'
-import SocialIcons from '@/components/SocialIcons.vue'
-
 export default {
-  components: {
-    LogoComponent,
-    SocialIcons,
-  },
   data() {
     return {
       thisYear: new Date().getFullYear(),
