@@ -7,17 +7,29 @@
     />
 
     <div class="theAboutMeGallery__secondaryFigure">
-      <NuxtImg
+      <!-- FIXME: Switch back to the dynamic :src when this bug is fixed - https://github.com/nuxt/image/issues/638   -->
+      <!-- <NuxtImg
         class="theAboutMeGallery__secondaryImg"
         :src="secondaryImgSrc(galleryDetails.secondaryImg)"
+        :alt="secondaryAlt()"
+      /> -->
+      <NuxtImg
+        class="theAboutMeGallery__secondaryImg"
+        src="https://res.cloudinary.com/oziocb/image/upload/v1667469666/theAboutMeGallerySecondary.jpg"
         :alt="secondaryAlt()"
       />
     </div>
 
     <div class="theAboutMeGallery__primaryFigure">
-      <NuxtImg
+      <!-- FIXME: Switch back to the dynamic :src when this bug is fixed - https://github.com/nuxt/image/issues/638   -->
+      <!-- <NuxtImg
         class="theAboutMeGallery__primaryImg"
         :src="primaryImgSrc(galleryDetails.primaryImg)"
+        :alt="primaryAlt()"
+      /> -->
+      <NuxtImg
+        class="theAboutMeGallery__primaryImg"
+        src="https://res.cloudinary.com/oziocb/image/upload/v1667469381/portrait.jpg"
         :alt="primaryAlt()"
       />
     </div>
@@ -30,43 +42,39 @@ export default {
     galleryDetails: {
       type: Object,
       default: () => ({
-        primaryImg: 'portrait-default',
-        primaryAlt: '',
-        primaryOverlayColor: '',
-        secondaryImg: 'theAboutMeGallerySecondary',
-        secondaryAlt: '',
-        secondaryOverlayColor: '',
+        primaryImg: "portrait-default",
+        primaryAlt: "",
+        primaryOverlayColor: "",
+        secondaryImg: "theAboutMeGallerySecondary",
+        secondaryAlt: "",
+        secondaryOverlayColor: "",
       }),
     },
   },
   computed: {
     cssProps() {
-      const { primaryOverlayColor, secondaryOverlayColor } = this.galleryDetails
+      const { primaryOverlayColor, secondaryOverlayColor } = this.galleryDetails;
       return {
-        '--color-overlay-primary': primaryOverlayColor,
-        '--color-overlay-secondary': secondaryOverlayColor,
-      }
+        "--color-overlay-primary": primaryOverlayColor,
+        "--color-overlay-secondary": secondaryOverlayColor,
+      };
     },
   },
   methods: {
-    primaryImgSrc(imgName = 'portrait-default') {
-      return `/assets/img/jpg/${imgName}.jpg`
+    primaryImgSrc(imgName = "portrait-default") {
+      return `/assets/img/jpg/${imgName}.jpg`;
     },
-    secondaryImgSrc(imgName = 'theAboutMeGallerySecondary') {
-      return `/assets/img/jpg/${imgName}.jpg`
+    secondaryImgSrc(imgName = "theAboutMeGallerySecondary") {
+      return `/assets/img/jpg/${imgName}.jpg`;
     },
     primaryAlt() {
-      return this.galleryDetails.primaryAlt
-        ? this.galleryDetails.primaryAlt
-        : ''
+      return this.galleryDetails.primaryAlt ? this.galleryDetails.primaryAlt : "";
     },
     secondaryAlt() {
-      return this.galleryDetails.secondaryAlt
-        ? this.galleryDetails.secondaryAlt
-        : ''
+      return this.galleryDetails.secondaryAlt ? this.galleryDetails.secondaryAlt : "";
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -83,7 +91,7 @@ export default {
       left: 0;
       width: 100%;
       height: 100%;
-      content: '';
+      content: "";
     }
     &:before {
       left: -400px;
@@ -97,8 +105,7 @@ export default {
         transparent 95%
       );
       transform: skewX(25deg);
-      animation: imageGlare $duration-animation-about-me-gallery-base linear
-        infinite;
+      animation: imageGlare $duration-animation-about-me-gallery-base linear infinite;
     }
   }
 
@@ -121,10 +128,7 @@ export default {
       animation-delay: 1.25s;
     }
     &:after {
-      background-color: var(
-        --color-overlay-primary,
-        rgba($color-primary, 0.25)
-      );
+      background-color: var(--color-overlay-primary, rgba($color-primary, 0.25));
     }
   }
 
@@ -143,10 +147,7 @@ export default {
     }
 
     &:after {
-      background-color: var(
-        --color-overlay-secondary,
-        rgba($color-secondary, 0.75)
-      );
+      background-color: var(--color-overlay-secondary, rgba($color-secondary, 0.75));
       transition: opacity $duration-animation-base linear;
     }
     &:hover:after {
