@@ -8,7 +8,7 @@
         :disabled="ariaExpanded"
       />
       <!-- REMOVE_ME: remove when done! -->
-      <NuxtLink to="/faq">faq</NuxtLink>
+      <NuxtLink to="/blog">blog</NuxtLink>
 
       <div class="header__hamburger">
         <button
@@ -30,9 +30,7 @@
         <nav class="nav">
           <ul class="nav__list">
             <li v-for="(page, index) in pages" :key="index" class="nav__item">
-              <NuxtLink class="nav__link" :to="page.url">{{
-                page.name
-              }}</NuxtLink>
+              <NuxtLink class="nav__link" :to="page.url">{{ page.name }}</NuxtLink>
             </li>
           </ul>
         </nav>
@@ -46,7 +44,7 @@
 </template>
 
 <script>
-import { gsap, Sine, Power1 } from 'gsap'
+import { gsap, Sine, Power1 } from "gsap";
 
 export default {
   data() {
@@ -54,27 +52,27 @@ export default {
       ariaExpanded: false,
       pages: [
         {
-          name: 'Home',
-          url: '/',
+          name: "Home",
+          url: "/",
         },
         {
-          name: 'FAQ',
-          url: '/faq',
+          name: "FAQ",
+          url: "/faq",
         },
         {
-          name: 'Blog',
-          url: '/blog',
+          name: "Blog",
+          url: "/blog",
         },
       ],
-    }
+    };
   },
   mounted() {
-    const { hamburger } = this.$refs
-    const hamburgerMotion = gsap.timeline()
+    const { hamburger } = this.$refs;
+    const hamburgerMotion = gsap.timeline();
 
-    gsap.set('.nav', { xPercent: -50, yPercent: -50 })
-    gsap.set('.nav li', { translateX: -300 })
-    gsap.set('.header__platformIcons--mobile', { translateX: 110 })
+    gsap.set(".nav", { xPercent: -50, yPercent: -50 });
+    gsap.set(".nav li", { translateX: -300 });
+    gsap.set(".header__platformIcons--mobile", { translateX: 110 });
 
     // prettier-ignore
     hamburgerMotion
@@ -94,14 +92,14 @@ export default {
       .to('.line03', 1, { rotation: -45, transformOrigin: 'center' }, 'step3')
       .reverse()
 
-    hamburger.addEventListener('click', function () {
-      hamburgerMotion.reversed(!hamburgerMotion.reversed())
-    })
+    hamburger.addEventListener("click", function () {
+      hamburgerMotion.reversed(!hamburgerMotion.reversed());
+    });
 
     // Hide menu after clicking on .nav__link
-    const navList = document.querySelector('.nav__list')
+    const navList = document.querySelector(".nav__list");
 
-    const clickNavLinkHandler = gsap.timeline({ paused: true })
+    const clickNavLinkHandler = gsap.timeline({ paused: true });
     // prettier-ignore
     clickNavLinkHandler
       .to('.nav', 0.3, { autoAlpha: 0 }, 0.1, 0)
@@ -110,22 +108,22 @@ export default {
       .to('.pageTransitionOverlay', 0.6, { autoAlpha: 1 }, 0.5)
       .add( () => { this.$emit('forceRerender') }, 0.8 )
 
-    navList.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('router-link-exact-active')) {
-        clickNavLinkHandler.play()
+    navList.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("router-link-exact-active")) {
+        clickNavLinkHandler.play();
       } else {
-        hamburgerMotion.reverse(0)
+        hamburgerMotion.reverse(0);
       }
 
-      this.handleAriaExpanded()
-    })
+      this.handleAriaExpanded();
+    });
   },
   methods: {
     handleAriaExpanded() {
-      this.ariaExpanded = !this.ariaExpanded
+      this.ariaExpanded = !this.ariaExpanded;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
