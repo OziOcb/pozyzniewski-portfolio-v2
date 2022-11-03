@@ -16,6 +16,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxt/content": "^2.2.1",
     "@nuxt/image-edge": "^1.0.0-27769790.4b27db3",
     "@zhead/schema": "^0.9.7",
     "nuxt": "^3.0.0-rc.12",
