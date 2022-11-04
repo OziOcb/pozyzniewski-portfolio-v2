@@ -5,14 +5,6 @@
       <hr class="blog__divider" />
     </header>
 
-    <Pagination
-      v-model="pageNumber"
-      :records="totalNumberOfPosts"
-      :per-page="postsPerPage"
-      :options="{ edgeNavigation: true, chunk: 6, chunksNavigation: 'scroll' }"
-      @paginate="paginationHandler()"
-    />
-
     <article v-for="post in posts" :key="post.id" class="blogCard">
       <div class="blogCard__imageContainer">
         <figure class="blogCard__figure">
@@ -42,8 +34,17 @@
     </article>
 
     <footer>
-      <!-- TODO: Implement pagination -->
-      <!-- <Pager class="pagination" :info="$page.post.pageInfo" /> -->
+      <Pagination
+        v-model="pageNumber"
+        :records="numberOfPosts"
+        :per-page="postsPerPage"
+        :options="{
+          edgeNavigation: false,
+          chunk: numberOfChunks,
+          chunksNavigation: 'scroll',
+        }"
+        @paginate="paginationHandler()"
+      />
     </footer>
   </main>
 </template>
@@ -68,8 +69,9 @@ useHead({
 });
 
 const pageNumber = ref(1);
-const postsPerPage = ref(3);
-const totalNumberOfPosts = (await queryContent("/").find()).length;
+const postsPerPage = ref(6);
+const numberOfChunks = ref(3);
+const numberOfPosts = ref((await queryContent("/").find()).length);
 const { data: posts, refresh: refreshPosts } = await useAsyncData("posts", () =>
   queryContent("/")
     .only([
@@ -265,21 +267,45 @@ onBeforeRouteLeave((to, from, next) => {
   }
 }
 
-.pagination a {
-  margin-right: 0.625rem;
-  display: inline-flex;
-  width: $size-blogCard-paginationItem-size;
-  height: $size-blogCard-paginationItem-size;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  border: 1px solid $color-text-lightest;
-  border-radius: 3px;
+:deep() .VuePagination {
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 0;
+    list-style: none;
+  }
 
-  &.router-link-exact-active {
-    color: $color-text-lightest;
-    background-color: $color-black;
-    border-color: $color-black;
+  .page-link {
+    margin-right: 0.625rem;
+    display: inline-flex;
+    width: $size-blogCard-paginationItem-size;
+    height: $size-blogCard-paginationItem-size;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border: 1px solid $color-text-lightest;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: box-shadow $duration-animation-base linear,
+      color $duration-animation-base linear;
+    &:focus {
+      @extend %custom-outline;
+    }
+    &:visited {
+      color: $color-link-text;
+    }
+    &:hover {
+      color: $color-link-text-hover;
+    }
+    &.active {
+      color: $color-text-lightest;
+      background-color: $color-black;
+      border-color: $color-black;
+    }
+    &:disabled {
+      display: none;
+    }
   }
 }
 </style>
