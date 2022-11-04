@@ -76,7 +76,7 @@ onMounted(() => {
   if (checkWindowWidth() < breakpoint.lg) {
     enterPageWithBasicTransition();
   } else {
-    this.gsapPageTransition({ pageEnter: true });
+    gsapPageTransition({ pageEnter: true });
   }
 });
 
@@ -105,7 +105,7 @@ onBeforeRouteLeave((to, from, next) => {
   if (checkWindowWidth() < breakpoint.lg) {
     leavePageWithBasicTransition(next);
   } else {
-    this.gsapPageTransition({ onComplete: next });
+    gsapPageTransition({ onComplete: next });
   }
 });
 </script>
