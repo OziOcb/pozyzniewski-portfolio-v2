@@ -8,13 +8,6 @@
     <article v-for="post in posts" :key="post.id" class="blogCard">
       <div class="blogCard__imageContainer">
         <figure class="blogCard__figure">
-          <!-- TODO: ENDED HERE! -->
-          <!-- TODO: ENDED HERE! -->
-          <!-- TODO: ENDED HERE! -->
-          <!-- TODO: ENDED HERE! Use cloudinary like in the TheAboutMeGallery.vue -->
-          <!-- TODO: ENDED HERE! -->
-          <!-- TODO: ENDED HERE! -->
-          <!-- TODO: ENDED HERE! -->
           <NuxtImg class="blogCard__image" :alt="post.image_caption" :src="post.image" />
 
           <NuxtLink class="blogCard__arrow" :to="`blog${post._path}`">
