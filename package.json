@@ -33,6 +33,7 @@
     "github-calendar": "^2.3.1",
     "gsap": "^3.0.4",
     "pinia": "^2.0.23",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "v-pagination-3": "^0.1.7"
   }
 }

@@ -5,6 +5,14 @@
       <hr class="blog__divider" />
     </header>
 
+    <Pagination
+      v-model="pageNumber"
+      :records="totalNumberOfPosts"
+      :per-page="postsPerPage"
+      :options="{ edgeNavigation: true, chunk: 6, chunksNavigation: 'scroll' }"
+      @paginate="paginationHandler()"
+    />
+
     <article v-for="post in posts" :key="post.id" class="blogCard">
       <div class="blogCard__imageContainer">
         <figure class="blogCard__figure">
@@ -53,8 +61,16 @@ import {
   leavePageWithBasicTransition,
 } from "@/utils/transitions";
 import { gsap } from "gsap";
+import Pagination from "v-pagination-3";
 
-const { data: posts } = await useAsyncData("posts", () =>
+useHead({
+  title: "Blog",
+});
+
+const pageNumber = ref(1);
+const postsPerPage = ref(3);
+const totalNumberOfPosts = (await queryContent("/").find()).length;
+const { data: posts, refresh: refreshPosts } = await useAsyncData("posts", () =>
   queryContent("/")
     .only([
       "_path",
@@ -65,12 +81,14 @@ const { data: posts } = await useAsyncData("posts", () =>
       "image_caption",
       "title",
     ])
+    .sort({ created_at: -1 })
+    .limit(postsPerPage.value)
+    .skip((pageNumber.value !== 1 ? postsPerPage.value : 0) * (pageNumber.value - 1))
     .find()
 );
-
-useHead({
-  title: "Blog",
-});
+function paginationHandler(e) {
+  refreshPosts();
+}
 
 onMounted(async () => {
   if (checkWindowWidth() < breakpoint.lg) {
