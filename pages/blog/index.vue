@@ -11,8 +11,7 @@
           <NuxtImg class="blogCard__image" :alt="post.image_caption" :src="post.image" />
 
           <NuxtLink class="blogCard__arrow" :to="`blog${post._path}`">
-            <!-- TODO: Fix this icon -->
-            <font-awesome :icon="['fas', 'arrow-right']" />
+            <Icon name="fa-solid:arrow-right" />
           </NuxtLink>
         </figure>
       </div>
