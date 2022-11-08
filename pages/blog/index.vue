@@ -43,6 +43,7 @@
           chunk: numberOfChunks,
           chunksNavigation: 'scroll',
         }"
+        @paginate="paginationHandler()"
       />
     </footer>
   </main>
@@ -95,6 +96,10 @@ const pagedPosts = computed(() => {
 
   return posts.value.slice(startIndex, endIndex);
 });
+
+function paginationHandler() {
+  document.body.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 /////// PAGINATION - END
 
 onMounted(async () => {
