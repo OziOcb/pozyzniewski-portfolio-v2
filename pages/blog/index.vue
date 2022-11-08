@@ -5,7 +5,7 @@
       <hr class="blog__divider" />
     </header>
 
-    <article v-for="post in posts" :key="post.id" class="blogCard">
+    <article v-for="post in pagedPosts" :key="post.id" class="blogCard">
       <div class="blogCard__imageContainer">
         <figure class="blogCard__figure">
           <NuxtImg class="blogCard__image" :alt="post.image_caption" :src="post.image" />
@@ -43,7 +43,6 @@
           chunk: numberOfChunks,
           chunksNavigation: 'scroll',
         }"
-        @paginate="paginationHandler()"
       />
     </footer>
   </main>
@@ -68,10 +67,11 @@ useHead({
   title: "Blog",
 });
 
+/////// PAGINATION - START
 const pageNumber = ref(1);
 const postsPerPage = ref(6);
 const numberOfChunks = ref(3);
-const numberOfPosts = ref((await queryContent("/").find()).length);
+const numberOfPosts = ref(0);
 const { data: posts, refresh: refreshPosts } = await useAsyncData("posts", () =>
   queryContent("/")
     .only([
@@ -84,13 +84,18 @@ const { data: posts, refresh: refreshPosts } = await useAsyncData("posts", () =>
       "title",
     ])
     .sort({ created_at: -1 })
-    .limit(postsPerPage.value)
-    .skip((pageNumber.value !== 1 ? postsPerPage.value : 0) * (pageNumber.value - 1))
     .find()
 );
-function paginationHandler(e) {
-  refreshPosts();
-}
+numberOfPosts.value = posts.value.length;
+
+const pagedPosts = computed(() => {
+  const startIndex =
+    (pageNumber.value !== 1 ? postsPerPage.value : 0) * (pageNumber.value - 1);
+  const endIndex = startIndex + postsPerPage.value;
+
+  return posts.value.slice(startIndex, endIndex);
+});
+/////// PAGINATION - END
 
 onMounted(async () => {
   if (checkWindowWidth() < breakpoint.lg) {
