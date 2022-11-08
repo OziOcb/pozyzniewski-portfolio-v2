@@ -10,7 +10,7 @@
         <figure class="blogCard__figure">
           <NuxtImg class="blogCard__image" :alt="post.image_caption" :src="post.image" />
 
-          <NuxtLink class="blogCard__arrow" :to="`blog${post._path}`">
+          <NuxtLink class="blogCard__arrow" :to="`${post._path}`">
             <Icon name="fa-solid:arrow-right" />
           </NuxtLink>
         </figure>
@@ -18,7 +18,7 @@
 
       <div class="blogCard__textContainer">
         <h2 class="blogCard__title">
-          <NuxtLink :to="`blog${post._path}`">{{ post.title }}</NuxtLink>
+          <NuxtLink :to="`${post._path}`">{{ post.title }}</NuxtLink>
         </h2>
 
         <p class="blogCard__excerpt">{{ post.excerpt }}</p>
@@ -27,7 +27,7 @@
           {{ post.category }} / {{ formatDate(post.created_at) }}
         </p>
 
-        <BaseLinkLikeButton class="blogCard__btn" :to="`blog${post._path}`">
+        <BaseLinkLikeButton class="blogCard__btn" :to="`${post._path}`">
           Read the article
         </BaseLinkLikeButton>
       </div>
