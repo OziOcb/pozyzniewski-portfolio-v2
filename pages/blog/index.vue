@@ -18,7 +18,7 @@
 
       <div class="blogCard__textContainer">
         <h2 class="blogCard__title">
-          <NuxtLink :to="`${post._path}`">{{ post.title }}</NuxtLink>
+          <NuxtLink :to="`${post._path}`">{{ post.title_visible }}</NuxtLink>
         </h2>
 
         <p class="blogCard__excerpt">{{ post.excerpt }}</p>
@@ -76,7 +76,7 @@ const { data: posts } = await useAsyncData("posts", () =>
       "excerpt",
       "image",
       "image_caption",
-      "title",
+      "title_visible",
     ])
     .sort({ created_at: -1 })
     .find()
