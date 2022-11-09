@@ -5,7 +5,7 @@
       <hr class="blog__divider" />
     </header>
 
-    <article v-for="post in pagedPosts" :key="post.id" class="blogCard">
+    <article v-for="post in paginatedPosts" :key="post.id" class="blogCard">
       <div class="blogCard__imageContainer">
         <figure class="blogCard__figure">
           <NuxtImg class="blogCard__image" :alt="post.image_caption" :src="post.image" />
@@ -24,7 +24,7 @@
         <p class="blogCard__excerpt">{{ post.excerpt }}</p>
 
         <p class="blogCard__details">
-          {{ post.category }} / {{ formatDate(post.created_at) }}
+          {{ post.category }} / {{ formatDateToDayMonthYear(post.created_at) }}
         </p>
 
         <BaseLinkLikeButton class="blogCard__btn" :to="`${post._path}`">
@@ -50,7 +50,6 @@
 </template>
 
 <script setup>
-// import { Pager } from "gridsome"
 import { formatDateToDayMonthYear } from "@/utils/date";
 import { onBeforeRouteLeave } from "vue-router";
 import { checkWindowWidth } from "@/utils/window";
@@ -68,12 +67,7 @@ useHead({
   title: "Blog",
 });
 
-/////// PAGINATION - START
-const pageNumber = ref(1);
-const postsPerPage = ref(6);
-const numberOfChunks = ref(3);
-const numberOfPosts = ref(0);
-const { data: posts, refresh: refreshPosts } = await useAsyncData("posts", () =>
+const { data: posts } = await useAsyncData("posts", () =>
   queryContent("/")
     .only([
       "_path",
@@ -87,20 +81,6 @@ const { data: posts, refresh: refreshPosts } = await useAsyncData("posts", () =>
     .sort({ created_at: -1 })
     .find()
 );
-numberOfPosts.value = posts.value.length;
-
-const pagedPosts = computed(() => {
-  const startIndex =
-    (pageNumber.value !== 1 ? postsPerPage.value : 0) * (pageNumber.value - 1);
-  const endIndex = startIndex + postsPerPage.value;
-
-  return posts.value.slice(startIndex, endIndex);
-});
-
-function paginationHandler() {
-  document.body.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-/////// PAGINATION - END
 
 onMounted(async () => {
   if (checkWindowWidth() < breakpoint.lg) {
@@ -112,9 +92,13 @@ onMounted(async () => {
   }
 });
 
-function formatDate(payload) {
-  return formatDateToDayMonthYear(payload);
-}
+onBeforeRouteLeave((to, from, next) => {
+  if (checkWindowWidth() < breakpoint.lg) {
+    leavePageWithBasicTransition(next);
+  } else {
+    gsapPageTransition({ onComplete: next });
+  }
+});
 
 function gsapPageTransition({ onComplete, pageEnter }) {
   const tl = gsap.timeline({ onComplete });
@@ -135,13 +119,24 @@ function gsapPageTransition({ onComplete, pageEnter }) {
   return pageEnter ? tl.reverse(0) : tl.play();
 }
 
-onBeforeRouteLeave((to, from, next) => {
-  if (checkWindowWidth() < breakpoint.lg) {
-    leavePageWithBasicTransition(next);
-  } else {
-    gsapPageTransition({ onComplete: next });
-  }
+/////// PAGINATION - START
+const pageNumber = ref(1);
+const postsPerPage = ref(6);
+const numberOfChunks = ref(3);
+const numberOfPosts = ref(posts.value.length);
+
+const paginatedPosts = computed(() => {
+  const startIndex =
+    (pageNumber.value !== 1 ? postsPerPage.value : 0) * (pageNumber.value - 1);
+  const endIndex = startIndex + postsPerPage.value;
+
+  return posts.value.slice(startIndex, endIndex);
 });
+
+function paginationHandler() {
+  document.body.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+/////// PAGINATION - END
 </script>
 
 <style lang="scss" scoped>
