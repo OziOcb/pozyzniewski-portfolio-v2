@@ -26,17 +26,17 @@ export default {
     return {
       websites: [
         {
-          link: 'https://github.com/OziOcb',
-          svg: 'SvgGitHub',
+          link: "https://github.com/OziOcb",
+          svg: "SvgGitHub",
         },
         {
-          link: 'https://www.linkedin.com/in/paul-ozyzniewski/',
-          svg: 'SvgLinkedIn',
+          link: "https://www.linkedin.com/in/paul-ozyzniewski/",
+          svg: "SvgLinkedIn",
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

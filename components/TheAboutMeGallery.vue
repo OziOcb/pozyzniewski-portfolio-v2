@@ -53,7 +53,8 @@ export default {
   },
   computed: {
     cssProps() {
-      const { primaryOverlayColor, secondaryOverlayColor } = this.galleryDetails;
+      const { primaryOverlayColor, secondaryOverlayColor } =
+        this.galleryDetails;
       return {
         "--color-overlay-primary": primaryOverlayColor,
         "--color-overlay-secondary": secondaryOverlayColor,
@@ -68,10 +69,14 @@ export default {
       return `/assets/img/jpg/${imgName}.jpg`;
     },
     primaryAlt() {
-      return this.galleryDetails.primaryAlt ? this.galleryDetails.primaryAlt : "";
+      return this.galleryDetails.primaryAlt
+        ? this.galleryDetails.primaryAlt
+        : "";
     },
     secondaryAlt() {
-      return this.galleryDetails.secondaryAlt ? this.galleryDetails.secondaryAlt : "";
+      return this.galleryDetails.secondaryAlt
+        ? this.galleryDetails.secondaryAlt
+        : "";
     },
   },
 };
@@ -105,7 +110,8 @@ export default {
         transparent 95%
       );
       transform: skewX(25deg);
-      animation: imageGlare $duration-animation-about-me-gallery-base linear infinite;
+      animation: imageGlare $duration-animation-about-me-gallery-base linear
+        infinite;
     }
   }
 
@@ -128,7 +134,10 @@ export default {
       animation-delay: 1.25s;
     }
     &:after {
-      background-color: var(--color-overlay-primary, rgba($color-primary, 0.25));
+      background-color: var(
+        --color-overlay-primary,
+        rgba($color-primary, 0.25)
+      );
     }
   }
 
@@ -147,7 +156,10 @@ export default {
     }
 
     &:after {
-      background-color: var(--color-overlay-secondary, rgba($color-secondary, 0.75));
+      background-color: var(
+        --color-overlay-secondary,
+        rgba($color-secondary, 0.75)
+      );
       transition: opacity $duration-animation-base linear;
     }
     &:hover:after {

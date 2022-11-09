@@ -6,9 +6,9 @@
       </div>
 
       <div class="ghCalendar__weekDays">
-        <span v-for="(weekDay, index) in weekDays" :key="index">{{
-          weekDay
-        }}</span>
+        <span v-for="(weekDay, index) in weekDays" :key="index">
+          {{ weekDay }}
+        </span>
       </div>
 
       <div class="ghCalendar__commits commitsGrid">
@@ -24,26 +24,28 @@
 
 <script>
 export default {
+  emits: ["open-modalGithubCalendar"],
+
   data() {
     return {
       months: [
-        'Jan',
-        'Feb',
-        'Mar',
-        'Apr',
-        'May',
-        'Jun',
-        'Jul',
-        'Aug',
-        'Sep',
-        'Oct',
-        'Nov',
-        'Dec',
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
       ],
-      weekDays: ['Mon', 'Wed', 'Fri'],
-    }
+      weekDays: ["Mon", "Wed", "Fri"],
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -84,8 +86,8 @@ export default {
     grid-template-columns: 40px auto;
     grid-template-rows: 40px auto;
     grid-template-areas:
-      '. months'
-      'weekDays commitsGrid';
+      ". months"
+      "weekDays commitsGrid";
   }
 
   &__months {
@@ -207,7 +209,7 @@ export default {
         top: 0;
         left: -100%;
         height: 100%;
-        content: '';
+        content: "";
         background-color: $color-white;
         transform: skewX(25deg);
       }

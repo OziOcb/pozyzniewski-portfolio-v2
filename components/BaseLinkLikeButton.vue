@@ -19,14 +19,14 @@ export default {
   props: {
     to: {
       type: String,
-      default: '/',
+      default: "/",
     },
     blank: {
       type: Boolean,
       default: false,
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

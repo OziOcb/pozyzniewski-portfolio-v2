@@ -1,7 +1,7 @@
 // props: alignRight
 <template>
   <blockquote
-    class="blockquote "
+    class="blockquote"
     :class="{ right: alignRight }"
     cite="https://www.huxley.net/bnw/four.html"
   >
@@ -20,10 +20,10 @@ export default {
   props: {
     alignRight: {
       type: Boolean,
-      default: false
-    }
-  }
-}
+      default: false,
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

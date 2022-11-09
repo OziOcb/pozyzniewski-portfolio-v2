@@ -180,17 +180,17 @@
 export default {
   setup() {
     useHead({
-      title: 'Veriffica App - Terms And Conditions',
+      title: "Veriffica App - Terms And Conditions",
       meta: [
         {
-          name: 'description',
+          name: "description",
           content:
-            'Terms And Conditions made special for the Veriffica mobile app',
+            "Terms And Conditions made special for the Veriffica mobile app",
         },
       ],
-    })
+    });
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

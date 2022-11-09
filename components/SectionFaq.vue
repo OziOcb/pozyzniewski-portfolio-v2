@@ -7,17 +7,17 @@
 </template>
 
 <script>
-import AccordionBase from "@/components/AccordionBase.vue"
-import faqQuestions from "@/assets/content/faqQuestions"
+import AccordionBase from "@/components/AccordionBase.vue";
+import faqQuestions from "@/assets/content/faqQuestions";
 
 export default {
   components: { AccordionBase },
   data() {
     return {
-      faqContent: faqQuestions
-    }
-  }
-}
+      faqContent: faqQuestions,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>

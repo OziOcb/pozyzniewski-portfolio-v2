@@ -25,9 +25,9 @@ export default {
   data() {
     return {
       thisYear: new Date().getFullYear(),
-    }
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

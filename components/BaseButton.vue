@@ -6,14 +6,14 @@
 
 <script>
 export default {
-  name: 'BaseButton',
+  name: "BaseButton",
   props: {
     rounded: {
       type: Boolean,
       default: false,
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

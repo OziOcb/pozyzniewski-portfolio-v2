@@ -30,9 +30,9 @@
       }"
     >
       <p v-if="errors" class="error">
-        <span v-if="v$.formResponses.name.required.$invalid"
-          >this field is required.</span
-        >
+        <span v-if="v$.formResponses.name.required.$invalid">
+          this field is required.
+        </span>
         <span v-if="v$.formResponses.name.minLength.$invalid">
           Field must have at least
           {{ v$.formResponses.name.minLength.$params.min }} characters.
@@ -51,12 +51,12 @@
       }"
     >
       <p v-if="errors" class="error">
-        <span v-if="v$.formResponses.email.required.$invalid"
-          >this field is required.</span
-        >
-        <span v-if="v$.formResponses.email.email.$invalid"
-          >Needs to be a valid email.</span
-        >
+        <span v-if="v$.formResponses.email.required.$invalid">
+          this field is required.
+        </span>
+        <span v-if="v$.formResponses.email.email.$invalid">
+          Needs to be a valid email.
+        </span>
       </p>
     </BaseInput>
 
@@ -71,9 +71,9 @@
       }"
     >
       <p v-if="errors" class="error">
-        <span v-if="v$.formResponses.phone.numeric.$invalid"
-          >Needs to be a valid phone number.</span
-        >
+        <span v-if="v$.formResponses.phone.numeric.$invalid">
+          Needs to be a valid phone number.
+        </span>
         <span v-if="v$.formResponses.phone.minLength.$invalid">
           Field must have at least
           {{ v$.formResponses.phone.minLength.$params.min }} characters.
@@ -87,8 +87,10 @@
       type="text"
       label="Website Or Company Name"
       :class="{
-        'formField--error': errors && v$.formResponses.webOrCompanyName.$invalid,
-        'formField--success': errors && !v$.formResponses.webOrCompanyName.$invalid,
+        'formField--error':
+          errors && v$.formResponses.webOrCompanyName.$invalid,
+        'formField--success':
+          errors && !v$.formResponses.webOrCompanyName.$invalid,
       }"
     >
       <p v-if="errors" class="error">
@@ -111,9 +113,9 @@
       }"
     >
       <p v-if="errors" class="error">
-        <span v-if="v$.formResponses.message.required.$invalid"
-          >this field is required.</span
-        >
+        <span v-if="v$.formResponses.message.required.$invalid">
+          this field is required.
+        </span>
         <span v-if="v$.formResponses.message.minLength.$invalid">
           Field must have at least
           {{ v$.formResponses.message.minLength.$params.min }} characters.
@@ -192,7 +194,9 @@ export default {
   methods: {
     encode(data) {
       return Object.keys(data)
-        .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+        .map(
+          (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+        )
         .join("&");
     },
     handleSubmit(e) {

@@ -18,12 +18,12 @@
 </template>
 
 <script>
-import ContactMeForm from "@/components/ContactMeForm.vue"
+import ContactMeForm from "@/components/ContactMeForm.vue";
 export default {
   components: {
-    ContactMeForm
-  }
-}
+    ContactMeForm,
+  },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -6,5 +6,5 @@ export default {
   md: 600, // portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android),
   lg: 801, //tablet, landscape iPad, lo-res laptops ands desktops
   xl: 1025, //big landscape tablets, laptops, and desktops
-  xxl: 1281 //hi-res laptops and desktops
-}
+  xxl: 1281, //hi-res laptops and desktops
+};

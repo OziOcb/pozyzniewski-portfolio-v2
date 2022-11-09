@@ -8,7 +8,11 @@
     <article v-for="post in paginatedPosts" :key="post.id" class="blogCard">
       <div class="blogCard__imageContainer">
         <figure class="blogCard__figure">
-          <NuxtImg class="blogCard__image" :alt="post.image_caption" :src="post.image" />
+          <NuxtImg
+            class="blogCard__image"
+            :alt="post.image_caption"
+            :src="post.image"
+          />
 
           <NuxtLink class="blogCard__arrow" :to="`${post._path}`">
             <Icon name="fa-solid:arrow-right" />
@@ -243,7 +247,8 @@ function paginationHandler() {
       background-color: $color-primary;
       border-radius: 50%;
       box-shadow: 0px 0.6em 1.25em $color-button-shadow;
-      transition: transform $duration-animation-base cubic-bezier(0.25, 0.1, 0.4, 2),
+      transition: transform $duration-animation-base
+          cubic-bezier(0.25, 0.1, 0.4, 2),
         box-shadow $duration-animation-base cubic-bezier(0.25, 0.1, 0.4, 2);
       &:hover,
       &:focus {

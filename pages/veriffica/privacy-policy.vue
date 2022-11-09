@@ -218,16 +218,16 @@
 export default {
   setup() {
     useHead({
-      title: 'Veriffica App - Privacy Policy',
+      title: "Veriffica App - Privacy Policy",
       meta: [
         {
-          name: 'description',
-          content: 'Privacy Policy made special for the Veriffica mobile app',
+          name: "description",
+          content: "Privacy Policy made special for the Veriffica mobile app",
         },
       ],
-    })
+    });
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

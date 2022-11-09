@@ -24,76 +24,76 @@ export default {
         "Webpack","Javascript","CodeWars","Vue","CodePen","CodeSandbox","Atom","AdobeTypekit",
         "Postman","Zapier","Babel","AdobeIllustrator","Yarn","Jest","Jekyll","Json"
       ],
-    }
+    };
   },
   mounted() {
-    const skillsGrid = this.$refs.skillsGrid
-    const skillsGridTiles = this.$refs.skillsGridTiles
-    const timeoutDurration = 100
-    const intervalDurration = 4800
+    const skillsGrid = this.$refs.skillsGrid;
+    const skillsGridTiles = this.$refs.skillsGridTiles;
+    const timeoutDurration = 100;
+    const intervalDurration = 4800;
 
     const removeHiglights = () =>
-      skillsGridTiles.forEach((tile) => tile.classList.remove('active'))
+      skillsGridTiles.forEach((tile) => tile.classList.remove("active"));
     const giveRandomTileNumber = () =>
-      Math.floor(Math.random() * (skillsGridTiles.length - 2)) // -2 because two last tiles are hidden on mobile
+      Math.floor(Math.random() * (skillsGridTiles.length - 2)); // -2 because two last tiles are hidden on mobile
     const highlightRandomTile = () =>
-      skillsGridTiles[giveRandomTileNumber()].classList.add('active')
+      skillsGridTiles[giveRandomTileNumber()].classList.add("active");
 
-    let timeout
+    let timeout;
     const highlightFourRandomTiles = (bool) => {
       if (bool) {
         timeout = setTimeout(() => {
-          highlightRandomTile()
+          highlightRandomTile();
           setTimeout(() => {
-            highlightRandomTile()
+            highlightRandomTile();
             setTimeout(() => {
-              highlightRandomTile()
+              highlightRandomTile();
               setTimeout(() => {
-                highlightRandomTile()
+                highlightRandomTile();
                 setTimeout(() => {
-                  highlightRandomTile()
+                  highlightRandomTile();
                   setTimeout(() => {
-                    highlightRandomTile()
+                    highlightRandomTile();
                     setTimeout(() => {
-                      highlightRandomTile()
-                    }, timeoutDurration)
-                  }, timeoutDurration)
-                }, timeoutDurration)
-              }, timeoutDurration)
-            }, timeoutDurration)
-          }, timeoutDurration)
-        }, timeoutDurration)
+                      highlightRandomTile();
+                    }, timeoutDurration);
+                  }, timeoutDurration);
+                }, timeoutDurration);
+              }, timeoutDurration);
+            }, timeoutDurration);
+          }, timeoutDurration);
+        }, timeoutDurration);
       } else {
-        clearTimeout(timeout)
+        clearTimeout(timeout);
       }
-    }
+    };
 
-    let interval
+    let interval;
     const setHiglightInterval = (bool) => {
       if (bool) {
         interval = setInterval(() => {
-          removeHiglights()
-          highlightFourRandomTiles(true)
-        }, intervalDurration)
+          removeHiglights();
+          highlightFourRandomTiles(true);
+        }, intervalDurration);
       } else {
-        highlightFourRandomTiles(false)
-        clearInterval(interval)
+        highlightFourRandomTiles(false);
+        clearInterval(interval);
       }
-    }
+    };
 
-    highlightFourRandomTiles(true)
-    setHiglightInterval(true)
+    highlightFourRandomTiles(true);
+    setHiglightInterval(true);
 
-    skillsGrid.addEventListener('mouseenter', () => {
-      removeHiglights()
-      setHiglightInterval(false)
-    })
-    skillsGrid.addEventListener('mouseleave', () => {
-      highlightFourRandomTiles(true)
-      setHiglightInterval(true)
-    })
+    skillsGrid.addEventListener("mouseenter", () => {
+      removeHiglights();
+      setHiglightInterval(false);
+    });
+    skillsGrid.addEventListener("mouseleave", () => {
+      highlightFourRandomTiles(true);
+      setHiglightInterval(true);
+    });
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -127,7 +127,7 @@ $cubic-bezier-skills-grid: cubic-bezier(0.25, 0.1, 0.36, 4.13);
       position: absolute;
       width: $size-skills-grid-width;
       height: $size-skills-grid-width;
-      content: '';
+      content: "";
       background-color: $color-skills-grid-box-bg;
       transition: background-color $duration-animation-skills-grid ease;
       transform: rotate(45deg);

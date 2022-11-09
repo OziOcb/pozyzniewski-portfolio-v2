@@ -1,13 +1,16 @@
-import { enterPageWithBasicTransition, leavePageWithBasicTransition } from "@/utils/transitions.js"
+import {
+  enterPageWithBasicTransition,
+  leavePageWithBasicTransition,
+} from "@/utils/transitions.js";
 
 export const basicPageTransitionEnter = {
   mounted() {
-    enterPageWithBasicTransition()
-  }
-}
+    enterPageWithBasicTransition();
+  },
+};
 
 export const basicPageTransitionLeave = {
   beforeRouteLeave(to, from, next) {
-    leavePageWithBasicTransition(next)
-  }
-}
+    leavePageWithBasicTransition(next);
+  },
+};

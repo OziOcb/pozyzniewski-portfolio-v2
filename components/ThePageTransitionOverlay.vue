@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import LogoComponent from "@/components/LogoComponent.vue"
+import LogoComponent from "@/components/LogoComponent.vue";
 
 export default {
   components: {
-    LogoComponent
-  }
-}
+    LogoComponent,
+  },
+};
 </script>
 
 <style lang="scss" scoped>

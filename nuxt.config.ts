@@ -1,17 +1,17 @@
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
   imports: {
-    dirs: ['stores'],
+    dirs: ["stores"],
   },
-  nitro: { preset: 'netlify' },
+  nitro: { preset: "netlify" },
   modules: [
-    '@nuxt/content',
-    '@nuxt/image-edge',
-    'nuxt-icon',
+    "@nuxt/content",
+    "@nuxt/image-edge",
+    "nuxt-icon",
     [
-      '@pinia/nuxt',
+      "@pinia/nuxt",
       {
-        autoImports: ['defineStore'],
+        autoImports: ["defineStore"],
       },
     ],
   ],
@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   //     apiBase: '', // can be overridden by NUXT_PUBLIC_API_BASE environment variable
   //   },
   // },
-  css: ['@/assets/scss/styles/index.scss'],
+  css: ["@/assets/scss/styles/index.scss"],
   vite: {
     css: {
       preprocessorOptions: {
@@ -35,4 +35,4 @@ export default defineNuxtConfig({
       },
     },
   },
-})
+});

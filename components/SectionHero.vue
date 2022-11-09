@@ -43,38 +43,38 @@ export default {
         x: 0,
         y: 50,
       },
-    }
+    };
   },
   computed: {
     cssProps() {
-      const { x, y } = this.cursorPosition
+      const { x, y } = this.cursorPosition;
 
       return {
-        '--maskX': x,
-        '--maskY': y,
-      }
+        "--maskX": x,
+        "--maskY": y,
+      };
     },
   },
   methods: {
     onMouseMove(e) {
-      const width = this.$refs.hero__contentWrapper.clientWidth
-      const height = this.$refs.hero__contentWrapper.clientHeight
-      const oX = (e.layerX / width) * 100
-      const oY = (e.layerY / height) * 100
+      const width = this.$refs.hero__contentWrapper.clientWidth;
+      const height = this.$refs.hero__contentWrapper.clientHeight;
+      const oX = (e.layerX / width) * 100;
+      const oY = (e.layerY / height) * 100;
 
       this.cursorPosition = {
         x: oX,
         y: oY,
-      }
+      };
     },
     onMouseOut() {
       this.cursorPosition = {
         x: 0,
         y: 50,
-      }
+      };
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -86,16 +86,16 @@ export default {
   grid-template-columns: 1fr 60px 1fr;
   grid-template-rows: 2fr 1fr 1fr;
   grid-template-areas:
-    '. . .'
-    'contentWrapper contentWrapper contentWrapper'
-    'platformIcons scrollBtn .';
+    ". . ."
+    "contentWrapper contentWrapper contentWrapper"
+    "platformIcons scrollBtn .";
   @media (min-width: $breakpoint-lg) {
     grid-template-columns: 1fr 4fr 60px 5fr;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-areas:
-      '. . . .'
-      '. contentWrapper contentWrapper contentWrapper'
-      'platformIcons . scrollBtn .';
+      ". . . ."
+      ". contentWrapper contentWrapper contentWrapper"
+      "platformIcons . scrollBtn .";
   }
   @media (min-width: $breakpoint-xl) {
     &:before {
@@ -106,8 +106,8 @@ export default {
       width: 100%;
       height: 100%;
       opacity: 0.15;
-      content: '';
-      background: url('/assets/img/png/mbp.png') 60vw center no-repeat;
+      content: "";
+      background: url("/assets/img/png/mbp.png") 60vw center no-repeat;
       @media (min-width: $breakpoint-xxl) {
         background-position: 53vw;
       }

@@ -18,20 +18,22 @@ export default {
   props: {
     questionObj: {
       type: Object,
-      required: true
+      required: true,
     },
     isDropdownOpen: {
       type: Boolean,
-      required: true
-    }
+      required: true,
+    },
   },
+
+  emits: ["changeActiveItemId"],
 
   methods: {
     handleClickOnTop() {
-      this.$emit("changeActiveItemId", this.questionObj.id)
-    }
-  }
-}
+      this.$emit("changeActiveItemId", this.questionObj.id);
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

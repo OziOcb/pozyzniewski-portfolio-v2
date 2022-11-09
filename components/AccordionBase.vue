@@ -17,29 +17,31 @@
 </template>
 
 <script>
-import AccordionItem from "@/components/AccordionItem.vue"
+import AccordionItem from "@/components/AccordionItem.vue";
 
 export default {
   components: { AccordionItem },
   props: {
     content: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
 
   data() {
     return {
-      activeItemId: ""
-    }
+      activeItemId: "",
+    };
   },
 
   methods: {
     handleChangeActiveItemId(id) {
-      this.activeItemId !== id ? (this.activeItemId = id) : (this.activeItemId = "")
-    }
-  }
-}
+      this.activeItemId !== id
+        ? (this.activeItemId = id)
+        : (this.activeItemId = "");
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

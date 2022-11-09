@@ -12,14 +12,14 @@
           <br />
           involve me and I learn
 
-          <template #cite> Benjamin Franklin </template>
+          <template #cite>Benjamin Franklin</template>
         </QuoteBlock>
       </div>
 
       <div class="calendarSection__column">
         <TheGithubCalendarDummy
           @open-modalGithubCalendar="
-            this.$refs.modalGithubCalendar.toggleHandler(true)
+            $refs.modalGithubCalendar.toggleHandler(true)
           "
         />
       </div>
@@ -41,9 +41,9 @@
           </p>
           <p>
             My main focus is to provide
-            <strong
-              >high-quality code that implements the newest standards</strong
-            >
+            <strong>
+              high-quality code that implements the newest standards
+            </strong>
             while remembering about
             <strong>good practices</strong>
           </p>
@@ -60,13 +60,13 @@
 
 <script>
 // QuoteBlock
-import QuoteBlock from '@/components/QuoteBlock.vue'
+import QuoteBlock from "@/components/QuoteBlock.vue";
 // Github Calendar
-import TheGithubCalendar from '@/components/TheGithubCalendar.vue'
-import TheGithubCalendarDummy from '@/components/TheGithubCalendar--dummy.vue'
-import TheModal from '@/components/TheModal.vue'
+import TheGithubCalendar from "@/components/TheGithubCalendar.vue";
+import TheGithubCalendarDummy from "@/components/TheGithubCalendar--dummy.vue";
+import TheModal from "@/components/TheModal.vue";
 // SkillsGrid
-import TheSkillsGrid from '@/components/TheSkillsGrid.vue'
+import TheSkillsGrid from "@/components/TheSkillsGrid.vue";
 
 export default {
   components: {
@@ -76,7 +76,7 @@ export default {
     TheSkillsGrid,
     QuoteBlock,
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

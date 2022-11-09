@@ -7,16 +7,16 @@
 import {
   basicPageTransitionEnter,
   basicPageTransitionLeave,
-} from '@/mixins/pageTransitions'
+} from "@/mixins/pageTransitions";
 
 export default {
   mixins: [basicPageTransitionEnter, basicPageTransitionLeave],
   setup() {
-    const appConfig = useAppConfig()
+    const appConfig = useAppConfig();
 
     useHead({
       title: `Error Page - ${appConfig.title}`,
-    })
+    });
   },
-}
+};
 </script>

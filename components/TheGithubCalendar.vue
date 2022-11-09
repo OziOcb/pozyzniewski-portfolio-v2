@@ -6,37 +6,37 @@
 </template>
 
 <script>
-import GithubCalendar from 'github-calendar'
+import GithubCalendar from "github-calendar";
 
 export default {
   mounted() {
-    GithubCalendar('.calendar', 'OziOcb', {
+    GithubCalendar(".calendar", "OziOcb", {
       responsive: true,
-    })
+    });
   },
-}
+};
 </script>
 
 <style lang="scss">
 // Below styles are copied from here - https://unpkg.com/github-calendar@2.3.1/dist/github-calendar-responsive.css
 
-rect.ContributionCalendar-day[data-level='0'] {
+rect.ContributionCalendar-day[data-level="0"] {
   fill: rgba($color-github-calendar-single-commit-bg, 0.05);
 }
 
-rect.ContributionCalendar-day[data-level='1'] {
+rect.ContributionCalendar-day[data-level="1"] {
   fill: rgba($color-github-calendar-single-commit-bg, 0.3);
 }
 
-rect.ContributionCalendar-day[data-level='2'] {
+rect.ContributionCalendar-day[data-level="2"] {
   fill: rgba($color-github-calendar-single-commit-bg, 0.6);
 }
 
-rect.ContributionCalendar-day[data-level='3'] {
+rect.ContributionCalendar-day[data-level="3"] {
   fill: rgba($color-github-calendar-single-commit-bg, 0.8);
 }
 
-rect.ContributionCalendar-day[data-level='4'] {
+rect.ContributionCalendar-day[data-level="4"] {
   fill: rgba($color-github-calendar-single-commit-bg, 1);
 }
 

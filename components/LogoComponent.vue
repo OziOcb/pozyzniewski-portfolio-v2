@@ -10,7 +10,7 @@ export default {
   props: {
     version: {
       type: String,
-      default: 'SvgTheLogo',
+      default: "SvgTheLogo",
     },
     disabled: {
       type: Boolean,
@@ -23,13 +23,13 @@ export default {
   },
   computed: {
     showCorrectLogo() {
-      let theLogo = this.version
-      if (this.version === 'simple') theLogo = 'SvgTheLogoSimple'
-      if (this.version === 'fullWhite') theLogo = 'SvgTheLogoFullWhite'
-      return theLogo
+      let theLogo = this.version;
+      if (this.version === "simple") theLogo = "SvgTheLogoSimple";
+      if (this.version === "fullWhite") theLogo = "SvgTheLogoFullWhite";
+      return theLogo;
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>

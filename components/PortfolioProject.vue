@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import BaseLinkLikeButton from '@/components/BaseLinkLikeButton.vue'
+import BaseLinkLikeButton from "@/components/BaseLinkLikeButton.vue";
 
 export default {
   components: {
@@ -52,48 +52,48 @@ export default {
       default: () => {
         return {
           year: new Date().getFullYear(),
-          title: 'Project Title',
-          desc: 'Poroject Description',
-          repoUrl: 'https://example.com/',
-          projectUrl: 'https://example.com/',
-          colorGradientPrimary: '',
-          colorGradientSecondary: '',
-          bgImage: 'default',
-          designUrl: '',
-        }
+          title: "Project Title",
+          desc: "Poroject Description",
+          repoUrl: "https://example.com/",
+          projectUrl: "https://example.com/",
+          colorGradientPrimary: "",
+          colorGradientSecondary: "",
+          bgImage: "default",
+          designUrl: "",
+        };
       },
     },
   },
   computed: {
     bgImagePath() {
-      return '/assets/img/jpg/projects-bgs/' + this.projectInfo.bgImage
+      return "/assets/img/jpg/projects-bgs/" + this.projectInfo.bgImage;
     },
     bgImageSize() {
-      const imgPath = this.bgImagePath
+      const imgPath = this.bgImagePath;
       return {
         sm: `${imgPath}.jpg`,
         md: `${imgPath}--md.jpg`,
         lg: `${imgPath}--lg.jpg`,
         xl: `${imgPath}--xl.jpg`,
-      }
+      };
     },
     // cssProps() explanation:
     // https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
     cssProps() {
-      const { sm, md, lg, xl } = this.bgImageSize
-      const { colorGradientPrimary, colorGradientSecondary } = this.projectInfo
+      const { sm, md, lg, xl } = this.bgImageSize;
+      const { colorGradientPrimary, colorGradientSecondary } = this.projectInfo;
 
       return {
-        '--color-gradient-primary': colorGradientPrimary,
-        '--color-gradient-secondary': colorGradientSecondary,
-        '--bg-image-src': `url(${JSON.stringify(sm)})`,
-        '--bg-image-src--md': `url(${JSON.stringify(md)})`,
-        '--bg-image-src--lg': `url(${JSON.stringify(lg)})`,
-        '--bg-image-src--xl': `url(${JSON.stringify(xl)})`,
-      }
+        "--color-gradient-primary": colorGradientPrimary,
+        "--color-gradient-secondary": colorGradientSecondary,
+        "--bg-image-src": `url(${JSON.stringify(sm)})`,
+        "--bg-image-src--md": `url(${JSON.stringify(md)})`,
+        "--bg-image-src--lg": `url(${JSON.stringify(lg)})`,
+        "--bg-image-src--xl": `url(${JSON.stringify(xl)})`,
+      };
     },
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -148,7 +148,7 @@ export default {
       right: 0;
       bottom: 0;
       left: 0;
-      content: '';
+      content: "";
       background-color: $color-body-bg-light;
       transition: transform ($duration-animation-portfolio-project-base * 2)
         cubic-bezier(0.4, 0, 0.2, 1);
@@ -168,7 +168,7 @@ export default {
       right: calc(100% + 0.4375rem);
       width: 50vw;
       height: 2px;
-      content: '';
+      content: "";
       background-color: $color-text-light;
       transition: background-color $duration-animation-portfolio-project-base
         ease-in-out;

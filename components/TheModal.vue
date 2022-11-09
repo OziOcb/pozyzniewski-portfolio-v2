@@ -1,6 +1,6 @@
 <template>
   <Transition name="modal">
-    <div class="modal" v-if="isModalOpen">
+    <div v-if="isModalOpen" class="modal">
       <div class="modal__overlay" @click="toggleHandler(false)"></div>
 
       <div class="modal__card">
@@ -20,15 +20,15 @@
 </template>
 
 <script setup lang="ts">
-const isModalOpen = ref(false)
+const isModalOpen = ref(false);
 
 function toggleHandler(isOpen: boolean) {
-  isModalOpen.value = isOpen
+  isModalOpen.value = isOpen;
 }
 
 defineExpose({
   toggleHandler,
-})
+});
 </script>
 
 <style scoped lang="scss">

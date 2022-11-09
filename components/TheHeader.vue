@@ -27,7 +27,9 @@
         <nav class="nav">
           <ul class="nav__list">
             <li v-for="(page, index) in pages" :key="index" class="nav__item">
-              <NuxtLink class="nav__link" :to="page.url">{{ page.name }}</NuxtLink>
+              <NuxtLink class="nav__link" :to="page.url">
+                {{ page.name }}
+              </NuxtLink>
             </li>
           </ul>
         </nav>
@@ -44,6 +46,7 @@
 import { gsap, Sine, Power1 } from "gsap";
 
 export default {
+  emits: ["forceRerender"],
   data() {
     return {
       ariaExpanded: false,

@@ -2,7 +2,10 @@
   <section class="aboutMe">
     <div class="aboutMe__inner container">
       <div class="aboutMe__column aboutMe__column--gallery">
-        <TheAboutMeGallery class="aboutMe__gallery" :gallery-details="galleryDetails" />
+        <TheAboutMeGallery
+          class="aboutMe__gallery"
+          :gallery-details="galleryDetails"
+        />
       </div>
 
       <div class="aboutMe__column">
@@ -12,7 +15,11 @@
             A
             <strong>Senior Frontend Developer</strong>
             at
-            <a href="https://www.evri.com/" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.evri.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Evri (old Hermes)
             </a>
             .
@@ -26,19 +33,20 @@
 
         <h2 class="aboutMe__title fixedSize">in more details</h2>
         <p>
-          In 2017 I chose to follow my passion and become a programmer. After a rough start - coding
-          late at night while still working full time - I've decided to dedicate myself to
-          programming.
+          In 2017 I chose to follow my passion and become a programmer. After a
+          rough start - coding late at night while still working full time -
+          I've decided to dedicate myself to programming.
 
           <br />
           <br />
 
-          Since then, I have strived to perfect my coding skills by educating myself towards
-          creating
+          Since then, I have strived to perfect my coding skills by educating
+          myself towards creating
           <strong>clean, easy to enlargement code.</strong>
           I gathered enough
           <strong>experience in front end development</strong>
-          to be a valuable employee and make the web a beautiful place with every line of code.
+          to be a valuable employee and make the web a beautiful place with
+          every line of code.
         </p>
 
         <ul class="aboutMe__detailsList">
@@ -46,7 +54,9 @@
           <li>Town: Barnsley</li>
         </ul>
         <div class="aboutMe__btn">
-          <BaseLinkLikeButton class="btn" to="#contactMe">CONTACT ME</BaseLinkLikeButton>
+          <BaseLinkLikeButton class="btn" to="#contactMe">
+            CONTACT ME
+          </BaseLinkLikeButton>
         </div>
       </div>
     </div>
@@ -54,22 +64,23 @@
 </template>
 
 <script>
-import TheAboutMeGallery from "@/components/TheAboutMeGallery.vue"
+import TheAboutMeGallery from "@/components/TheAboutMeGallery.vue";
 
 export default {
   components: {
-    TheAboutMeGallery
+    TheAboutMeGallery,
   },
   data() {
     return {
       galleryDetails: {
         primaryImg: "portrait",
-        primaryAlt: "Portrait of Paul Ozyzniewski the author and the owner of this website",
-        secondaryAlt: "Well maintained office desk"
-      }
-    }
-  }
-}
+        primaryAlt:
+          "Portrait of Paul Ozyzniewski the author and the owner of this website",
+        secondaryAlt: "Well maintained office desk",
+      },
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
