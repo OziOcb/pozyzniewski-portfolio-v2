@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lora:400,700|Source+Sans+Pro:200,400,700&display=swap");
+@import "https://fonts.googleapis.com/css?family=Lora:400,700|Source+Sans+Pro:200,400,700&display=swap";
 @font-face {
   font-family: "ArcaMajora3-Heavy";
   src: url("/src/assets/fonts/ArcaMajora3-Heavy.eot");
@@ -7,24 +7,18 @@
   font-style: normal;
 }
 
-$system-default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+$system-default-font-family: -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial,
   sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-
 $heading-font-family: "ArcaMajora3-Heavy", $system-default-font-family;
 $heading-font-weight: 700;
-
 $hero-font-family: "Source Sans Pro", $system-default-font-family;
 $hero-font-weight: 700;
-
 $content-font-family: "Lora", $system-default-font-family;
 $content-font-weight: 400;
-
 $button-font-family: "Source Sans Pro", $system-default-font-family;
 $button-font-weight: 400;
-
 $blockquote-font-family: "Source Sans Pro", $system-default-font-family;
 $blockquote-font-weight: 400;
-
 $blockquote-cite-font-family: $blockquote-font-family;
 $blockquote-cite-font-weight: 200;
 

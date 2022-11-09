@@ -27,7 +27,7 @@
 // ===
 %skewBorderBefore {
   @include angle(before, false, 5deg);
-  &::before {
+  &:before {
     @media (min-width: $breakpoint-sm) {
       transform: skewY(2deg);
     }
@@ -35,7 +35,7 @@
 }
 %skewBorderAfter {
   @include angle(after, false, 5deg);
-  &::after {
+  &:after {
     @media (min-width: $breakpoint-sm) {
       transform: skewY(-2deg);
     }
@@ -43,7 +43,7 @@
 }
 %skewBorderBeforeFlip {
   @include angle(before, true, 5deg);
-  &::before {
+  &:before {
     @media (min-width: $breakpoint-sm) {
       transform: skewY(-2deg);
     }
@@ -51,7 +51,7 @@
 }
 %skewBorderAfterFlip {
   @include angle(after, true, 5deg);
-  &::after {
+  &:after {
     @media (min-width: $breakpoint-sm) {
       transform: skewY(2deg);
     }

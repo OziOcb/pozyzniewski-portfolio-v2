@@ -17,7 +17,7 @@
       height: 50%;
       content: "";
       background: inherit;
-      -webkit-backface-visibility: hidden; // for Chrome Windows
+      backface-visibility: hidden; // for Chrome Windows
     }
 
     @if $pseudo == "before" {
