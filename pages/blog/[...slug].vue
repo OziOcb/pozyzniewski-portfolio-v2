@@ -82,14 +82,12 @@ function gsapPageTransition({ onComplete, pageEnter }) {
   const tl = gsap.timeline({ onComplete });
 
   // prettier-ignore
-  tl.fromTo(".pageTransitionWrapper", durationTransitionForWrapper, { autoAlpha: 1 }, { autoAlpha: 0 }, 0)
-    .fromTo(".pageTransitionOverlay", durationTransitionForOverlay, { autoAlpha: 0 }, { autoAlpha: 1 }, 0.3)
-    .to(".header__divider", 0.3, { autoAlpha: 0 }, 0)
+  tl.to(".header__divider", 0.3, { autoAlpha: 0 }, 0)
     .to(".post__backBtn", 0.3, { autoAlpha: 0, scale: 2 }, 0)
     .to(".header__summary", 0.3, { autoAlpha: 0, y: "4em" }, 0.3)
     .to(".header__title", 0.3, { autoAlpha: 0, y: "-0.5em" }, 0.5)
-    .to(".pageTransitionWrapper", durationTransitionForWrapper, { autoAlpha: 0 }, 0.4)
-    .to(".pageTransitionOverlay", durationTransitionForOverlay, { autoAlpha: 1 }, 0.7);
+    .fromTo(".pageTransitionWrapper", durationTransitionForWrapper, { autoAlpha: 1 }, { autoAlpha: 0 }, 0.4)
+    .fromTo(".pageTransitionOverlay", durationTransitionForOverlay, { autoAlpha: 0 }, { autoAlpha: 1 }, 0.7)
 
   return pageEnter ? tl.reverse(0) : tl.play();
 }
