@@ -290,6 +290,7 @@ function paginationHandler() {
     text-decoration: none;
     border: 1px solid $color-text-lightest;
     border-radius: 3px;
+    color: $color-link-text;
     cursor: pointer;
     transition: box-shadow $duration-animation-base linear,
       color $duration-animation-base linear;
