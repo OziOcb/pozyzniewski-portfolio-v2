@@ -9,6 +9,9 @@ export default <RouterConfig>{
         behavior: 'smooth',
       }
     }
-    return
+
+    return {
+      top: 0,
+    }
   },
 }
