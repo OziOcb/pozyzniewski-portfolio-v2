@@ -7,9 +7,6 @@
         desc="Main Logo"
         :disabled="ariaExpanded"
       />
-      <!-- REMOVE_ME: remove when done! -->
-      <NuxtLink to="/blog">blog</NuxtLink>
-
       <div class="header__hamburger">
         <button
           ref="hamburger"
