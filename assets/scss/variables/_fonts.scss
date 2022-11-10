@@ -1,10 +1,10 @@
 @import "https://fonts.googleapis.com/css?family=Lora:400,700|Source+Sans+Pro:200,400,700&display=swap";
 @font-face {
   font-family: "ArcaMajora3-Heavy";
+  font-style: normal;
+  font-weight: normal;
   src: url("/src/assets/fonts/ArcaMajora3-Heavy.eot");
   src: url("/src/assets/fonts/ArcaMajora3-Heavy.eot") format("embedded-opentype");
-  font-weight: normal;
-  font-style: normal;
 }
 
 $system-default-font-family: -apple-system, blinkmacsystemfont, "Segoe UI", helvetica, arial,

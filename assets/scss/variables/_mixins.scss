@@ -10,9 +10,9 @@
 
     #{$selector} {
       position: absolute;
-      z-index: $layer-negative-z-index;
       right: 0;
       left: 0;
+      z-index: $layer-negative-z-index;
       display: block;
       height: 50%;
       content: "";
