@@ -46,8 +46,8 @@ export default {
 
   &__link {
     @extend %svg-color-change-hover;
-    margin: 0.2rem;
     padding: 0.5rem;
+    margin: 0.2rem;
     line-height: 0;
     border-radius: 5px;
   }

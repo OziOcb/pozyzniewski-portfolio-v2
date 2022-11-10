@@ -234,6 +234,7 @@ export default {
 .privacyPolicy {
   padding-top: $size-section-padding-top;
   padding-bottom: $size-section-padding-bottom;
+
   @media (min-width: $breakpoint-lg) {
     padding-right: 0;
     padding-left: 0;
@@ -245,10 +246,10 @@ export default {
   }
 
   &__divider {
-    margin: 30px auto 40px;
     display: block;
     max-width: 150px;
     height: 3px;
+    margin: 30px auto 40px;
     background-color: $color-text-primary;
     border: none;
   }

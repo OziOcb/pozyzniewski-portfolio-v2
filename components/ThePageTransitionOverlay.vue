@@ -21,16 +21,16 @@ export default {
 <style lang="scss" scoped>
 .pageTransitionOverlay {
   position: fixed;
-  z-index: $layer-negative-z-index;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
+  z-index: $layer-negative-z-index;
   display: flex;
-  justify-content: center;
   align-items: center;
-  opacity: 0;
+  justify-content: center;
   background: $color-menu-gradient;
+  opacity: 0;
 
   &__logo {
     width: 250px;

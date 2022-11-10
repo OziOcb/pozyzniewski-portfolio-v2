@@ -45,21 +45,22 @@ rect.ContributionCalendar-day[data-level="4"] {
 }
 
 .calendar {
-  font-family: Helvetica, arial;
   width: 100%;
   min-height: 243px;
-  padding-left: 1rem;
   padding-right: 1rem;
+  padding-left: 1rem;
   margin-bottom: -1.8rem;
+  font-family: Helvetica, arial;
   text-align: center;
 }
 
 .contrib-column {
   padding: 15px 0;
+  font-size: 11px;
   text-align: center;
   border-top: 1px solid #ddd;
-  font-size: 11px;
   border-left: none;
+
   @media (min-width: $breakpoint-sm) {
     border-left: 1px solid #ddd;
   }
@@ -80,8 +81,8 @@ rect.ContributionCalendar-day[data-level="4"] {
 }
 
 .contrib-number {
-  font-size: 1.5rem;
   display: block;
+  font-size: 1.5rem;
   color: $color-text-primary;
 }
 
@@ -90,7 +91,7 @@ rect.ContributionCalendar-day[data-level="4"] {
 }
 
 text.ContributionCalendar-label {
-  fill: #ccc;
   font-size: 11px;
+  fill: #ccc;
 }
 </style>

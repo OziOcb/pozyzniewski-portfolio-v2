@@ -81,25 +81,25 @@ export default {
 
 .formField {
   position: relative;
-  margin-bottom: $size-grid-padding;
   display: block;
+  margin-bottom: $size-grid-padding;
 }
 .formField__label {
-  @include label-active();
+  @include label-active;
   position: absolute;
   top: 0;
   left: 0;
-  margin: 0;
-  padding: 18px 12px 0;
   display: block;
   width: 100%;
+  padding: 18px 12px 0;
+  margin: 0;
   font-weight: normal;
   transition: all $duration-animation-input;
 }
 .formField__control {
   position: relative;
-  overflow: hidden;
   width: 100%;
+  overflow: hidden;
   background: $color-input-bg;
   border-radius: $size-input-border-radius;
 }
@@ -108,9 +108,9 @@ export default {
   right: 0;
   bottom: 0;
   left: 0;
-  margin: 0 auto;
   display: block;
   width: 1%;
+  margin: 0 auto;
   content: "";
   border-bottom: $size-input-border solid $color-input-border;
   transition: all ($duration-animation-input * 2);
@@ -122,10 +122,10 @@ export default {
 .formField__input,
 .formField__textarea {
   @extend %typography-medium;
-  margin-top: 24px;
-  padding: $size-input-padding;
   display: block;
   width: 100%;
+  padding: $size-input-padding;
+  margin-top: 24px;
   line-height: 1;
   color: #333;
   background: transparent;
@@ -133,22 +133,25 @@ export default {
   border-bottom: $size-input-border solid $color-input-border;
   outline: 0;
   appearance: none;
+
   // IE 10-11
-  &:-ms-input-placeholder {
+  &:input-placeholder {
     ~ .formField__label {
-      @include label-inactive();
+      @include label-inactive;
     }
   }
+
   // All other browsers except Edge
   &:placeholder-shown {
     ~ .formField__label {
-      @include label-inactive();
+      @include label-inactive;
     }
   }
   &:focus {
     ~ .formField__label {
       color: $color-primary;
-      @include label-active();
+
+      @include label-active;
     }
     ~ .formField__bar {
       border-bottom: 2px solid $color-primary;

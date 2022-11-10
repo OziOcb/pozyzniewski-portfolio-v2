@@ -50,23 +50,23 @@ defineExpose({
 
   &__card {
     position: absolute;
-    display: grid;
-    grid-template-rows: 1rem 1fr 1rem;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-rows: 1rem 1fr 1rem;
     width: calc(100vw - 2rem);
     max-width: 36rem;
     max-height: calc(100vh - 2rem);
+    overflow: hidden;
     background-color: $color-modal-bg;
     border-radius: 0.625rem;
-    overflow: hidden;
-    box-shadow: 0px 0.6em 1.25em $color-modal-shadow;
+    box-shadow: 0 0.6em 1.25em $color-modal-shadow;
+    transform: translate(-50%, -50%);
   }
 
   &__closeBtn {
-    margin: 0.8rem 0.8rem 0 auto;
     z-index: $layer-modal-z-index + 1;
+    margin: 0.8rem 0.8rem 0 auto;
   }
 
   &__content {

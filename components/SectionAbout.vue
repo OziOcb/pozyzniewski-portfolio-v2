@@ -90,6 +90,7 @@ export default {
   padding-bottom: 45px;
   overflow: hidden;
   background-color: $color-body-bg-light;
+
   @media (min-width: $breakpoint-xxl) {
     padding-top: 0;
     padding-bottom: 0;
@@ -105,6 +106,7 @@ export default {
   &:before {
     top: 0;
     border-top: 45px solid $color-body-bg;
+
     @media (min-width: $breakpoint-xxl) {
       border-top-width: 90px;
     }
@@ -112,6 +114,7 @@ export default {
   &:after {
     bottom: 0;
     border-bottom: 45px solid $color-body-bg;
+
     @media (min-width: $breakpoint-xxl) {
       border-bottom-width: 90px;
     }
@@ -123,6 +126,7 @@ export default {
     padding: 150px $size-gutter-width 90px;
     background-color: $color-body-bg-light;
     border-radius: 15px;
+
     @media (min-width: $breakpoint-xl) {
       display: flex;
     }
@@ -132,13 +136,14 @@ export default {
     flex: 1;
     &--gallery {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
   }
 
   &__gallery {
     margin-bottom: $size-gutter-width;
+
     @media (min-width: $breakpoint-xl) {
       margin-right: $size-gutter-width;
     }
@@ -146,6 +151,7 @@ export default {
 
   &__title {
     text-align: center;
+
     @media (min-width: $breakpoint-xl) {
       text-align: left;
     }
@@ -158,14 +164,15 @@ export default {
   }
 
   &__detailsList {
-    margin-bottom: 3.125em;
     padding-left: 0;
+    margin-bottom: 3.125em;
     list-style: none;
   }
 
   &__btn {
     display: flex;
     justify-content: center;
+
     @media (min-width: $breakpoint-xl) {
       justify-content: flex-start;
     }
@@ -174,8 +181,8 @@ export default {
 
 .btn {
   @extend %typography-button;
-  padding: $size-button-padding;
   display: inline-block;
+  padding: $size-button-padding;
   color: $color-button-text;
   background: $color-button-bg;
   border: none;

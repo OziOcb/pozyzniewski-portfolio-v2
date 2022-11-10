@@ -33,16 +33,16 @@ export default {
 <style lang="scss" scoped>
 .footer {
   @extend %skewBorderBeforeFlip;
-  padding-top: 85px;
   display: flex;
   justify-content: center;
+  padding-top: 85px;
   color: $color-text-light;
   background-color: $color-bg-dark;
 
   &__logo {
-    margin: 0 auto 17px;
     display: block;
     width: 160px;
+    margin: 0 auto 17px;
   }
 
   &__copyright {

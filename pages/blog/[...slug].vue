@@ -108,12 +108,12 @@ function gsapPageTransition({ onComplete, pageEnter }) {
 }
 
 .header {
-  padding: 0 $size-gutter-width;
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   min-height: 85vh;
-  justify-content: center;
-  align-items: center;
+  padding: 0 $size-gutter-width;
   background-image: var(--background-image-url);
   background-repeat: no-repeat;
   background-position: center center;
@@ -130,10 +130,10 @@ function gsapPageTransition({ onComplete, pageEnter }) {
   }
 
   &__divider {
-    margin: 30px auto 40px;
     display: block;
     max-width: 150px;
     height: 3px;
+    margin: 30px auto 40px;
     background-color: var(--color-title);
     border: none;
   }

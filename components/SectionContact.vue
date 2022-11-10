@@ -30,10 +30,11 @@ export default {
 .contact {
   padding-top: $size-section-padding-top;
   padding-bottom: $size-section-padding-bottom;
+
   @media (min-width: $breakpoint-xl) {
+    display: flex;
     padding-top: $size-section-padding-top--desktop;
     padding-bottom: $size-section-padding-bottom--desktop;
-    display: flex;
   }
 
   &__column {
@@ -42,11 +43,12 @@ export default {
 
   &__title {
     text-align: center;
+
     @media (min-width: $breakpoint-xl) {
+      max-width: 360px;
+      padding-right: $size-gutter-width;
       margin-top: 0.2em;
       margin-left: auto;
-      padding-right: $size-gutter-width;
-      max-width: 360px;
       text-align: right;
     }
   }
@@ -55,10 +57,11 @@ export default {
     @media (min-width: $breakpoint-md) {
       text-align: center;
     }
+
     @media (min-width: $breakpoint-xl) {
-      margin-left: auto;
-      padding-right: $size-gutter-width;
       max-width: 390px;
+      padding-right: $size-gutter-width;
+      margin-left: auto;
       text-align: right;
     }
   }

@@ -129,17 +129,17 @@ export default {
 <style lang="scss" scoped>
 .header {
   position: fixed;
-  z-index: $layer-header-z-index;
   top: 0;
   right: 0;
   left: 0;
+  z-index: $layer-header-z-index;
 
   &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-top: 1em;
     padding-bottom: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   &__logo {
@@ -153,12 +153,12 @@ export default {
 
   &__menu {
     position: absolute;
-    z-index: $layer-dropdown-z-index;
     top: 0;
     left: 0;
-    visibility: hidden;
+    z-index: $layer-dropdown-z-index;
     width: 100vw;
     height: 100vh;
+    visibility: hidden;
     background: $color-menu-gradient;
   }
 
@@ -172,18 +172,18 @@ export default {
 }
 
 .hamburger {
-  padding: 2px;
   display: flex;
-  overflow: hidden;
-  width: 40px;
-  height: 40px;
   flex-direction: column;
   justify-content: space-around;
+  width: 40px;
+  height: 40px;
+  padding: 2px;
+  overflow: hidden;
+  cursor: pointer;
   background-color: transparent;
   border: none;
   border-radius: 5px;
   transition: box-shadow $duration-animation-base linear;
-  cursor: pointer;
 
   &__line {
     display: block;
@@ -217,12 +217,13 @@ export default {
   overflow: hidden;
 
   &__list {
-    margin: 0;
     padding: 2em 0.5em;
+    margin: 0;
   }
 
   &__item {
     list-style-type: none;
+
     @extend %typography-xxlarge;
   }
 

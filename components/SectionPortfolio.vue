@@ -128,6 +128,7 @@ export default {
   padding-top: $size-section-padding-top;
   padding-bottom: calc($size-section-padding-bottom / 1.5);
   background-color: $color-body-bg-light;
+
   @media (min-width: $breakpoint-lg) {
     padding-top: calc($size-section-padding-top--desktop / 1.25);
     padding-bottom: calc($size-section-padding-bottom--desktop / 1.25);
@@ -135,10 +136,10 @@ export default {
 
   &__textWrapper {
     @media (min-width: $breakpoint-lg) {
-      margin-bottom: 100px;
       display: flex;
-      height: 200px;
       justify-content: center;
+      height: 200px;
+      margin-bottom: 100px;
     }
   }
   &__column {
@@ -147,6 +148,7 @@ export default {
 
   &__title {
     text-align: center;
+
     @media (min-width: $breakpoint-lg) {
       padding-right: $size-gutter-width;
       text-align: right;
@@ -154,14 +156,15 @@ export default {
   }
 
   &__desc {
-    margin-bottom: 40px;
     padding-right: $size-gutter-width;
     padding-left: $size-gutter-width;
+    margin-bottom: 40px;
+
     @media (min-width: $breakpoint-lg) {
-      margin-top: 100px;
+      max-width: 400px;
       padding-right: 0;
       padding-left: 0;
-      max-width: 400px;
+      margin-top: 100px;
     }
   }
 

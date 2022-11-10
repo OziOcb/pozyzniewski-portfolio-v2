@@ -111,12 +111,13 @@
       $value-int: typography-lerp($min-value, $max-value, $value);
 
       @media screen and (min-width: $prev-screen) {
-        #{$property}: typography-calc-interpolation(
-          $prev-screen,
-          $prev-value,
-          $screen-int,
-          $value-int
-        );
+        #{$property}:
+          typography-calc-interpolation(
+            $prev-screen,
+            $prev-value,
+            $screen-int,
+            $value-int
+          );
       }
 
       $prev-screen: $screen-int;
@@ -296,8 +297,7 @@ $typography-type-scale: (
     @return map-get($typography-type-scale, $level);
   }
 
-  @warn 'Unknown `#{$level}` in $typography-type-scale.';
-
+  @warn "Unknown `#{$level}` in $typography-type-scale.";
   @return null;
 }
 
@@ -316,8 +316,7 @@ $typography-type-scale-contrast: (
     @return map-get($typography-type-scale-contrast, $level);
   }
 
-  @warn 'Unknown `#{$level}` in $typography-type-scale-contrast.';
-
+  @warn "Unknown `#{$level}` in $typography-type-scale-contrast.";
   @return null;
 }
 
@@ -339,8 +338,7 @@ $typography-line-heights: (
     @return map-get($typography-line-heights, $level);
   }
 
-  @warn 'Unknown `#{$level}` in $line-height.';
-
+  @warn "Unknown `#{$level}` in $line-height.";
   @return null;
 }
 
@@ -361,8 +359,7 @@ $typography-line-heights-contrast: (
     @return map-get($typography-line-heights-contrast, $level);
   }
 
-  @warn 'Unknown `#{$level}` in $typography-line-heights-contrast.';
-
+  @warn "Unknown `#{$level}` in $typography-line-heights-contrast.";
   @return null;
 }
 

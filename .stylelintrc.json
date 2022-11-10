@@ -1,8 +1,15 @@
 {
   "extends": [
-    "stylelint-config-standard-scss",
     "stylelint-config-prettier-scss",
-    "stylelint-config-recess-order"
+    "stylelint-config-recess-order",
+    "stylelint-config-standard-scss",
+    "stylelint-config-recommended-vue/scss"
+  ],
+  "overrides": [
+    {
+      "files": ["*.vue", "**/*.vue"],
+      "rules": {}
+    }
   ],
   "rules": {
     "at-rule-no-unknown": [
@@ -30,6 +37,11 @@
       }
     ],
     "block-no-empty": true,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "keyframes-name-pattern": null,
+    "selector-pseudo-class-no-unknown": null,
+    "custom-property-pattern": null,
+    "font-family-no-missing-generic-family-keyword": null,
     "color-no-invalid-hex": true,
     "at-rule-name-space-after": "always",
     "number-max-precision": null,
@@ -42,6 +54,8 @@
     "scss/no-global-function-names": null,
     "scss/dollar-variable-pattern": null,
     "scss/dollar-variable-empty-line-before": null,
-    "scss/percent-placeholder-pattern": null
+    "scss/percent-placeholder-pattern": null,
+    "scss/operator-no-newline-after": null,
+    "scss/double-slash-comment-whitespace-inside": null
   }
 }

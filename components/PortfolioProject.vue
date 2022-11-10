@@ -100,43 +100,60 @@ export default {
 .portfolioProject {
   position: relative;
   overflow: hidden;
+
   //prettier-ignore
-  background-image: linear-gradient(
-                      45deg, var(--color-gradient-primary, rgba(255, 255, 255, 0.6))
-                      0%, var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
-                    ),
-                    var(--bg-image-src);
+  background-image:
+    linear-gradient(
+      45deg,
+      var(--color-gradient-primary, rgb(255 255 255 / 60%))
+      0%,
+      var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
+    ),
+    var(--bg-image-src);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
   @media (min-width: $breakpoint-sm) {
     // prettier-ignore
-    background-image: linear-gradient(
-                        45deg, var(--color-gradient-primary, rgba(255, 255, 255, 0.6))
-                        0%, var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
-                      ),
-                      var(--bg-image-src--md);
+    background-image:
+      linear-gradient(
+        45deg,
+        var(--color-gradient-primary, rgb(255 255 255 / 60%))
+        0%,
+        var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
+      ),
+      var(--bg-image-src--md);
   }
+
   @media (min-width: $breakpoint-xl) {
     // prettier-ignore
-    background-image: linear-gradient(
-                        45deg, var(--color-gradient-primary, rgba(255, 255, 255, 0.6))
-                        0%, var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
-                      ),
-                      var(--bg-image-src--lg);
+    background-image:
+      linear-gradient(
+        45deg,
+        var(--color-gradient-primary, rgb(255 255 255 / 60%))
+        0%,
+        var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
+      ),
+      var(--bg-image-src--lg);
   }
+
   @media (min-width: $breakpoint-xxl) {
     // prettier-ignore
-    background-image: linear-gradient(
-                        45deg, var(--color-gradient-primary, rgba(255, 255, 255, 0.6))
-                        0%, var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
-                      ),
-                      var(--bg-image-src--xl);
+    background-image:
+      linear-gradient(
+        45deg,
+        var(--color-gradient-primary, rgb(255 255 255 / 60%))
+        0%,
+        var(--color-gradient-secondary, rgba($color-secondary, 0.95)) 100%
+      ),
+      var(--bg-image-src--xl);
   }
 
   &__inner {
     padding-top: 5.125rem;
     padding-bottom: 5.125rem;
+
     @media (min-width: $breakpoint-xl) {
       display: flex;
       align-items: center;
@@ -150,7 +167,8 @@ export default {
       left: 0;
       content: "";
       background-color: $color-body-bg-light;
-      transition: transform ($duration-animation-portfolio-project-base * 2)
+      transition:
+        transform ($duration-animation-portfolio-project-base * 2)
         cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
@@ -170,7 +188,8 @@ export default {
       height: 2px;
       content: "";
       background-color: $color-text-light;
-      transition: background-color $duration-animation-portfolio-project-base
+      transition:
+        background-color $duration-animation-portfolio-project-base
         ease-in-out;
       transform: translateY(-2px);
     }
@@ -178,9 +197,10 @@ export default {
 
   &__descWrapper {
     padding-right: 25px;
+
     @media (min-width: $breakpoint-xl) {
-      margin-left: 50px;
       padding-right: 0;
+      margin-left: 50px;
     }
   }
 
@@ -188,9 +208,11 @@ export default {
   &__desc,
   &__btns {
     position: relative;
-    transition: transform $duration-animation-portfolio-project-base
+    transition:
+      transform $duration-animation-portfolio-project-base
       $duration-animation-portfolio-project-delay ease;
     transform-origin: left;
+
     @media (min-width: $breakpoint-xl) {
       transform-origin: center;
     }
@@ -205,9 +227,10 @@ export default {
     transition-delay: ($duration-animation-portfolio-project-delay * 1.5);
   }
   &__btns {
-    margin-left: auto;
     min-width: 280px;
+    margin-left: auto;
     transition-delay: ($duration-animation-portfolio-project-delay * 2);
+
     @media (min-width: $breakpoint-xl) {
       text-align: right;
       transition-delay: ($duration-animation-portfolio-project-delay * 1.5);
@@ -221,6 +244,7 @@ export default {
 
       &.designBtn {
         margin-bottom: 1.2em;
+
         @media (min-width: $breakpoint-sm) {
           margin-bottom: 0;
         }

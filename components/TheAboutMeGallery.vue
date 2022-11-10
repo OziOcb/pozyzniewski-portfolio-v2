@@ -101,32 +101,35 @@ export default {
     &:before {
       left: -400px;
       width: 400px;
+      background:
+        linear-gradient(
+          90deg,
+          transparent 0%,
+          $color-white 40%,
+          $color-white 90%,
+          transparent 95%
+        );
       opacity: 0.15;
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        $color-white 40%,
-        $color-white 90%,
-        transparent 95%
-      );
       transform: skewX(25deg);
-      animation: imageGlare $duration-animation-about-me-gallery-base linear
+      animation:
+        imageGlare $duration-animation-about-me-gallery-base linear
         infinite;
     }
   }
 
   &__primaryFigure {
     position: relative;
-    overflow: hidden;
     width: 250px;
     height: 290px;
+    overflow: hidden;
     border: 5px solid $color-white;
-    box-shadow: 0px 0.6em 1.25em $color-button-shadow;
-    transition: background $duration-animation-base linear,
+    box-shadow: 0 0.6em 1.25em $color-button-shadow;
+    transition:
+      background $duration-animation-base linear,
       box-shadow $duration-animation-base linear,
       transform $duration-animation-base linear;
     &:hover {
-      box-shadow: 0px 1.25em 2.5em $color-button-shadow;
+      box-shadow: 0 1.25em 2.5em $color-button-shadow;
       transform: scale(1.03) rotate(1deg);
     }
 
@@ -134,32 +137,35 @@ export default {
       animation-delay: 1.25s;
     }
     &:after {
-      background-color: var(
-        --color-overlay-primary,
-        rgba($color-primary, 0.25)
-      );
+      background-color:
+        var(
+          --color-overlay-primary,
+          rgba($color-primary, 0.25)
+        );
     }
   }
 
   &__secondaryFigure {
     position: relative;
     display: none;
-    overflow: hidden;
     width: 380px;
     height: 380px;
-    box-shadow: 0px 0.3em 0.6em $color-button-shadow;
-    transition: box-shadow $duration-animation-base linear,
+    overflow: hidden;
+    box-shadow: 0 0.3em 0.6em $color-button-shadow;
+    transition:
+      box-shadow $duration-animation-base linear,
       transform $duration-animation-base linear;
     &:hover {
-      box-shadow: 0px 0.6em 1.2em $color-button-shadow;
+      box-shadow: 0 0.6em 1.2em $color-button-shadow;
       transform: scale(1.03) rotate(1deg);
     }
 
     &:after {
-      background-color: var(
-        --color-overlay-secondary,
-        rgba($color-secondary, 0.75)
-      );
+      background-color:
+        var(
+          --color-overlay-secondary,
+          rgba($color-secondary, 0.75)
+        );
       transition: opacity $duration-animation-base linear;
     }
     &:hover:after {
@@ -185,44 +191,45 @@ export default {
 
   // GRID
   @media (min-width: $breakpoint-md) {
-    margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 30px;
     grid-template-rows: 20px 30px;
+    grid-template-columns: 1fr 1fr 30px;
     max-width: 450px;
+    margin: 0 auto;
     &__primaryFigure {
-      grid-column: 2;
       grid-row: 2;
+      grid-column: 2;
       justify-self: end;
     }
     &__secondaryFigure {
       display: block;
-      grid-column: 1 / span 2;
       grid-row: 1 / span 3;
+      grid-column: 1 / span 2;
     }
     &__backgroundFigure {
       display: block;
-      grid-column: 3;
       grid-row: 3;
+      grid-column: 3;
       justify-self: end;
     }
   }
+
   @media (min-width: $breakpoint-xl) {
-    grid-template-columns: 1fr 1fr;
     grid-template-rows: 110px 160px;
+    grid-template-columns: 1fr 1fr;
     max-width: 515px;
     &__primaryFigure {
-      grid-column: 2;
       grid-row: 1;
+      grid-column: 2;
       justify-self: start;
     }
     &__secondaryFigure {
-      grid-column: 1 / span 2;
       grid-row: 2;
+      grid-column: 1 / span 2;
     }
     &__backgroundFigure {
-      grid-column: 2;
       grid-row: 3;
+      grid-column: 2;
     }
   }
 }

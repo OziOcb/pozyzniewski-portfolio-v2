@@ -30,6 +30,7 @@ export default {
 
   methods: {
     handleClickOnTop() {
+      // test
       this.$emit("changeActiveItemId", this.questionObj.id);
     },
   },
@@ -41,15 +42,16 @@ export default {
   &__top {
     position: relative;
     display: flex;
-    overflow: hidden;
     align-items: center;
-    background: linear-gradient(
-      -45deg,
-      rgba(255, 255, 255, 0.6) 0%,
-      rgba($color-secondary, 0.1) 60%,
-      rgba(255, 255, 255, 0.6) 95%
-    );
+    overflow: hidden;
     cursor: pointer;
+    background:
+      linear-gradient(
+        -45deg,
+        rgb(255 255 255 / 60%) 0%,
+        rgba($color-secondary, 0.1) 60%,
+        rgb(255 255 255 / 60%) 95%
+      );
 
     &:before {
       position: absolute;
@@ -59,7 +61,8 @@ export default {
       left: 0;
       content: "";
       background-color: $color-body-bg-light;
-      transition: transform ($duration-animation-portfolio-project-base * 2)
+      transition:
+        transform ($duration-animation-portfolio-project-base * 2)
         cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -100,9 +103,10 @@ export default {
 
   &__question {
     z-index: $layer-page-z-index;
-    margin: 0;
     padding-top: 8px;
     padding-bottom: 8px;
+    margin: 0;
+
     @media (min-width: $breakpoint-sm) {
       padding-top: 0;
       padding-bottom: 0;
@@ -110,10 +114,11 @@ export default {
   }
 
   &__dropdown {
-    overflow: hidden;
     max-height: 0;
+    overflow: hidden;
     border-bottom: 2px solid transparent;
-    transition: max-height $duration-animation-base * 4,
+    transition:
+      max-height $duration-animation-base * 4,
       border-bottom-color $duration-animation-base * 4;
     .accordionItem--active & {
       max-height: 400px;
