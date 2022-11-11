@@ -236,7 +236,6 @@ export default {
 .submitBtn {
   display: block;
   margin: 2rem auto;
-
   @media (min-width: $breakpoint-lg) {
     margin: 2rem 0;
   }

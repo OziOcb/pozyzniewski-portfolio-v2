@@ -1,4 +1,3 @@
-// props: alignRight
 <template>
   <blockquote
     class="blockquote"
@@ -33,7 +32,6 @@ export default {
     margin-bottom: -0.2em;
     font-style: italic;
     text-align: center;
-
     &:before,
     &:after {
       content: '"';

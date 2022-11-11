@@ -89,7 +89,6 @@ export default {
   grid-template-columns: 1fr 60px 1fr;
   height: 100vh;
   overflow: hidden;
-
   @media (min-width: $breakpoint-lg) {
     grid-template-areas:
       ". . . ."
@@ -98,7 +97,6 @@ export default {
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 4fr 60px 5fr;
   }
-
   @media (min-width: $breakpoint-xl) {
     &:before {
       position: absolute;
@@ -110,21 +108,17 @@ export default {
       content: "";
       background: url("/assets/img/png/mbp.png") 60vw center no-repeat;
       opacity: 0.15;
-
       @media (min-width: $breakpoint-xxl) {
         background-position: 53vw;
       }
-
       @media (min-width: 1441px) {
         background-position: 47vw;
         transform: scale(1.2);
       }
-
       @media (min-width: 1900px) {
         background-position: 42vw;
         transform: scale(1.2);
       }
-
       @media (min-width: 2200px) {
         background-position: 42vw 11%;
         transform: scale(1.6);
@@ -147,7 +141,6 @@ export default {
 
   &__backgroundText {
     display: none;
-
     @media (min-width: $breakpoint-lg) {
       position: absolute;
       top: 50%;
@@ -161,13 +154,12 @@ export default {
       transform: translateY(-50%);
 
       &--clone {
-        clip-path:
-          polygon(
-            0 0,
-            calc(var(--maskX) * 1% + (var(--maskY) - 50) * 1%) 0,
-            calc(var(--maskX) * 1% + (var(--maskY) - 50) * -1%) 100%,
-            0 100%
-          );
+        clip-path: polygon(
+          0 0,
+          calc(var(--maskX) * 1% + (var(--maskY) - 50) * 1%) 0,
+          calc(var(--maskX) * 1% + (var(--maskY) - 50) * -1%) 100%,
+          0 100%
+        );
         color: rgba($color-secondary, 0.3);
         transition: clip-path 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
       }
@@ -193,7 +185,6 @@ export default {
     align-self: end;
     justify-content: flex-start;
     margin-bottom: 13vh;
-
     @media (min-width: $breakpoint-lg) {
       display: flex;
       flex-direction: column;

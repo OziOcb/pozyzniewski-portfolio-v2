@@ -113,7 +113,6 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
   @media (min-width: $breakpoint-sm) {
     // prettier-ignore
     background-image:
@@ -125,7 +124,6 @@ export default {
       ),
       var(--bg-image-src--md);
   }
-
   @media (min-width: $breakpoint-xl) {
     // prettier-ignore
     background-image:
@@ -137,7 +135,6 @@ export default {
       ),
       var(--bg-image-src--lg);
   }
-
   @media (min-width: $breakpoint-xxl) {
     // prettier-ignore
     background-image:
@@ -153,12 +150,10 @@ export default {
   &__inner {
     padding-top: 5.125rem;
     padding-bottom: 5.125rem;
-
     @media (min-width: $breakpoint-xl) {
       display: flex;
       align-items: center;
     }
-
     &:before {
       position: absolute;
       top: 0;
@@ -167,8 +162,7 @@ export default {
       left: 0;
       content: "";
       background-color: $color-body-bg-light;
-      transition:
-        transform ($duration-animation-portfolio-project-base * 2)
+      transition: transform ($duration-animation-portfolio-project-base * 2)
         cubic-bezier(0.4, 0, 0.2, 1);
     }
   }
@@ -179,7 +173,6 @@ export default {
     margin-left: 5.125rem;
     color: $color-text-light;
     transition: color $duration-animation-portfolio-project-base ease-in-out;
-
     &:before {
       position: absolute;
       top: 50%;
@@ -188,8 +181,7 @@ export default {
       height: 2px;
       content: "";
       background-color: $color-text-light;
-      transition:
-        background-color $duration-animation-portfolio-project-base
+      transition: background-color $duration-animation-portfolio-project-base
         ease-in-out;
       transform: translateY(-2px);
     }
@@ -197,7 +189,6 @@ export default {
 
   &__descWrapper {
     padding-right: 25px;
-
     @media (min-width: $breakpoint-xl) {
       padding-right: 0;
       margin-left: 50px;
@@ -208,11 +199,9 @@ export default {
   &__desc,
   &__btns {
     position: relative;
-    transition:
-      transform $duration-animation-portfolio-project-base
+    transition: transform $duration-animation-portfolio-project-base
       $duration-animation-portfolio-project-delay ease;
     transform-origin: left;
-
     @media (min-width: $breakpoint-xl) {
       transform-origin: center;
     }
@@ -230,7 +219,6 @@ export default {
     min-width: 280px;
     margin-left: auto;
     transition-delay: ($duration-animation-portfolio-project-delay * 2);
-
     @media (min-width: $breakpoint-xl) {
       text-align: right;
       transition-delay: ($duration-animation-portfolio-project-delay * 1.5);

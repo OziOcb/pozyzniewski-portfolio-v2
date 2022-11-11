@@ -60,7 +60,6 @@ rect.ContributionCalendar-day[data-level="4"] {
   text-align: center;
   border-top: 1px solid #ddd;
   border-left: none;
-
   @media (min-width: $breakpoint-sm) {
     border-left: 1px solid #ddd;
   }

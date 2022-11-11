@@ -223,7 +223,6 @@ export default {
 
   &__item {
     list-style-type: none;
-
     @extend %typography-xxlarge;
   }
 

@@ -128,7 +128,6 @@ export default {
   padding-top: $size-section-padding-top;
   padding-bottom: calc($size-section-padding-bottom / 1.5);
   background-color: $color-body-bg-light;
-
   @media (min-width: $breakpoint-lg) {
     padding-top: calc($size-section-padding-top--desktop / 1.25);
     padding-bottom: calc($size-section-padding-bottom--desktop / 1.25);
@@ -148,7 +147,6 @@ export default {
 
   &__title {
     text-align: center;
-
     @media (min-width: $breakpoint-lg) {
       padding-right: $size-gutter-width;
       text-align: right;
@@ -159,7 +157,6 @@ export default {
     padding-right: $size-gutter-width;
     padding-left: $size-gutter-width;
     margin-bottom: 40px;
-
     @media (min-width: $breakpoint-lg) {
       max-width: 400px;
       padding-right: 0;

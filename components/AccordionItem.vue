@@ -45,14 +45,12 @@ export default {
     align-items: center;
     overflow: hidden;
     cursor: pointer;
-    background:
-      linear-gradient(
-        -45deg,
-        rgb(255 255 255 / 60%) 0%,
-        rgba($color-secondary, 0.1) 60%,
-        rgb(255 255 255 / 60%) 95%
-      );
-
+    background: linear-gradient(
+      -45deg,
+      rgb(255 255 255 / 60%) 0%,
+      rgba($color-secondary, 0.1) 60%,
+      rgb(255 255 255 / 60%) 95%
+    );
     &:before {
       position: absolute;
       top: 0;
@@ -61,11 +59,9 @@ export default {
       left: 0;
       content: "";
       background-color: $color-body-bg-light;
-      transition:
-        transform ($duration-animation-portfolio-project-base * 2)
+      transition: transform ($duration-animation-portfolio-project-base * 2)
         cubic-bezier(0.4, 0, 0.2, 1);
     }
-
     &:hover,
     &:focus-within,
     .accordionItem--active & {
@@ -78,7 +74,6 @@ export default {
   &__toggleIcon {
     z-index: $layer-page-z-index;
     margin-right: 1rem;
-
     &:before,
     &:after {
       display: block;
@@ -106,7 +101,6 @@ export default {
     padding-top: 8px;
     padding-bottom: 8px;
     margin: 0;
-
     @media (min-width: $breakpoint-sm) {
       padding-top: 0;
       padding-bottom: 0;
@@ -117,8 +111,7 @@ export default {
     max-height: 0;
     overflow: hidden;
     border-bottom: 2px solid transparent;
-    transition:
-      max-height $duration-animation-base * 4,
+    transition: max-height $duration-animation-base * 4,
       border-bottom-color $duration-animation-base * 4;
     .accordionItem--active & {
       max-height: 400px;

@@ -60,8 +60,7 @@ export default {
   border: none;
   border-radius: 0.625em;
   box-shadow: 0 0.6em 1.25em $color-github-calendar-shadow;
-  transition:
-    background $duration-animation-base linear,
+  transition: background $duration-animation-base linear,
     box-shadow $duration-animation-base linear,
     transform $duration-animation-base linear;
 
@@ -74,7 +73,6 @@ export default {
     outline: 0;
     box-shadow: 0 1.25em 2.5em $color-button-shadow, 0 0 2px 4px $color-outline;
   }
-
   @media (min-width: $breakpoint-lg) {
     font-size: 0.8125rem;
   }
@@ -136,11 +134,9 @@ export default {
       height: 220px;
       opacity: 0;
       fill: $color-github-calendar-svg-fill;
-      transition:
-        opacity $duration-animation-github-calendar-hover
-        $duration-animation-github-calendar-hover linear,
+      transition: opacity $duration-animation-github-calendar-hover
+          $duration-animation-github-calendar-hover linear,
         transform ($duration-animation-github-calendar-hover * 2) linear;
-
       @media (min-width: $breakpoint-lg) {
         width: 320px;
         height: 320px;
@@ -166,7 +162,6 @@ export default {
   grid-row-gap: 4px;
   grid-column-gap: 4px;
   overflow: hidden;
-
   @media (min-width: $breakpoint-lg) {
     grid-template-rows: repeat(7, 35px);
     grid-template-columns: repeat(53, 35px);
@@ -185,8 +180,7 @@ export default {
 
       &:before,
       &:after {
-        animation:
-          commitBoxGlare $duration-animation-github-calendar
+        animation: commitBoxGlare $duration-animation-github-calendar
           $duration-animation-github-calendar-delay ease infinite;
       }
     }
@@ -195,8 +189,7 @@ export default {
 
       &:before,
       &:after {
-        animation:
-          commitBoxGlare $duration-animation-github-calendar linear
+        animation: commitBoxGlare $duration-animation-github-calendar linear
           infinite;
       }
     }

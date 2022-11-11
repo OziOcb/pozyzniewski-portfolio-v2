@@ -1,6 +1,6 @@
 <template>
   <h1>Error: 404</h1>
-  <div style="height: 500px;"></div>
+  <div style="height: 500px"></div>
 </template>
 
 <script>

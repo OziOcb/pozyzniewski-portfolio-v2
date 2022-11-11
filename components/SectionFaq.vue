@@ -27,7 +27,6 @@ export default {
   padding-bottom: 45px;
   overflow: hidden;
   background-color: $color-body-bg-light;
-
   @media (min-width: $breakpoint-xxl) {
     padding-top: 0;
     padding-bottom: 0;
@@ -43,7 +42,6 @@ export default {
   &:before {
     top: 0;
     border-top: 45px solid $color-body-bg;
-
     @media (min-width: $breakpoint-xxl) {
       border-top-width: 90px;
     }
@@ -51,7 +49,6 @@ export default {
   &:after {
     bottom: 0;
     border-bottom: 45px solid $color-body-bg;
-
     @media (min-width: $breakpoint-xxl) {
       border-bottom-width: 90px;
     }

@@ -101,18 +101,16 @@ export default {
     &:before {
       left: -400px;
       width: 400px;
-      background:
-        linear-gradient(
-          90deg,
-          transparent 0%,
-          $color-white 40%,
-          $color-white 90%,
-          transparent 95%
-        );
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        $color-white 40%,
+        $color-white 90%,
+        transparent 95%
+      );
       opacity: 0.15;
       transform: skewX(25deg);
-      animation:
-        imageGlare $duration-animation-about-me-gallery-base linear
+      animation: imageGlare $duration-animation-about-me-gallery-base linear
         infinite;
     }
   }
@@ -124,24 +122,21 @@ export default {
     overflow: hidden;
     border: 5px solid $color-white;
     box-shadow: 0 0.6em 1.25em $color-button-shadow;
-    transition:
-      background $duration-animation-base linear,
+    transition: background $duration-animation-base linear,
       box-shadow $duration-animation-base linear,
       transform $duration-animation-base linear;
     &:hover {
       box-shadow: 0 1.25em 2.5em $color-button-shadow;
       transform: scale(1.03) rotate(1deg);
     }
-
     &:before {
       animation-delay: 1.25s;
     }
     &:after {
-      background-color:
-        var(
-          --color-overlay-primary,
-          rgba($color-primary, 0.25)
-        );
+      background-color: var(
+        --color-overlay-primary,
+        rgba($color-primary, 0.25)
+      );
     }
   }
 
@@ -152,20 +147,17 @@ export default {
     height: 380px;
     overflow: hidden;
     box-shadow: 0 0.3em 0.6em $color-button-shadow;
-    transition:
-      box-shadow $duration-animation-base linear,
+    transition: box-shadow $duration-animation-base linear,
       transform $duration-animation-base linear;
     &:hover {
       box-shadow: 0 0.6em 1.2em $color-button-shadow;
       transform: scale(1.03) rotate(1deg);
     }
-
     &:after {
-      background-color:
-        var(
-          --color-overlay-secondary,
-          rgba($color-secondary, 0.75)
-        );
+      background-color: var(
+        --color-overlay-secondary,
+        rgba($color-secondary, 0.75)
+      );
       transition: opacity $duration-animation-base linear;
     }
     &:hover:after {

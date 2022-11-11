@@ -84,7 +84,6 @@ export default {
   padding-top: $size-section-padding-top;
   padding-bottom: $size-section-padding-bottom;
   overflow: hidden;
-
   @media (min-width: $breakpoint-lg) {
     padding-top: $size-section-padding-top--desktop;
     padding-bottom: $size-section-padding-bottom--desktop;
@@ -92,7 +91,6 @@ export default {
 }
 .calendarSection {
   margin-bottom: 80px;
-
   @media (min-width: $breakpoint-lg) {
     display: flex;
     margin-bottom: 200px;
@@ -101,7 +99,6 @@ export default {
     flex: 1;
     &:first-child {
       margin-bottom: 80px;
-
       @media (min-width: $breakpoint-lg) {
         margin-bottom: 0;
       }
@@ -112,7 +109,6 @@ export default {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-
     @media (min-width: $breakpoint-lg) {
       margin-right: $size-gutter-width;
       text-align: right;
@@ -127,7 +123,6 @@ export default {
     flex: 1;
     &:first-child {
       margin-bottom: 80px;
-
       @media (min-width: $breakpoint-lg) {
         order: 1;
         margin-bottom: 0;
@@ -139,17 +134,14 @@ export default {
       justify-content: center;
       padding-top: 10px;
       padding-bottom: 35px;
-      margin-left:
-        calc(
-          (($size-skills-grid-width / 2 + $size-skills-grid-gap / 2) / 2) * -1
-        );
+      margin-left: calc(
+        (($size-skills-grid-width / 2 + $size-skills-grid-gap / 2) / 2) * -1
+      );
       overflow: hidden;
-
       @media (min-width: $breakpoint-lg) {
         height: $size-skills-grid-width * 6.7;
         margin-left: 0;
       }
-
       @media (min-width: $breakpoint-xl) {
         height: $size-skills-grid-width * 6;
       }
@@ -171,7 +163,6 @@ export default {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
-
     @media (min-width: $breakpoint-lg) {
       margin-left: 0;
       text-align: left;
@@ -180,7 +171,6 @@ export default {
   &__desc {
     padding-right: $size-gutter-width;
     padding-left: $size-gutter-width;
-
     @media (min-width: $breakpoint-lg) {
       max-width: 622px;
       padding: 0;
